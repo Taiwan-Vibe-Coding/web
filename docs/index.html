@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taiwan Vibe Coding — ERP × AI 整合平台</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .product-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    @media (max-width: 640px) { .product-cards { grid-template-columns: 1fr; } }
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+    }
+    .product-card .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15em 0.55em;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+    .tag-bc   { background: #dbeafe; color: #1d4ed8; }
+    .tag-api  { background: #dcfce7; color: #15803d; }
+    .tag-hr   { background: #fef9c3; color: #a16207; }
+    .product-card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .product-card p  { margin: 0; font-size: 0.88rem; color: var(--muted); }
+    .client-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    @media (max-width: 640px) { .client-cards { grid-template-columns: 1fr; } }
+    .client-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      background: var(--card);
+    }
+    .client-card .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .client-card h3 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .client-card p  { margin: 0; font-size: 0.82rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">Taiwan Vibe Coding</a>
+    <nav>
+      <a href="pricing.html">訂閱方案</a>
+      <a href="getting-started.html">入門指南</a>
+      <a href="help/payroll.html">薪資</a>
+      <a href="help/einvoice.html">發票</a>
+      <a href="privacy.html">隱私權</a>
+      <a href="eula.html">EULA</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Taiwan Vibe Coding</h1>
+    <p class="meta">ERP × AI 整合平台 · Microsoft Dynamics 365 Business Central · 台灣在地化</p>
+    <p>提供 BC 延伸模組（AppSource）、ERP 連線 API、AI 工具整合，協助台灣企業將 ERP 資料無縫接入 Claude、Codex 等 AI 助理。</p>
+
+    <h2>產品</h2>
+
+    <div class="product-cards">
+      <div class="product-card">
+        <span class="tag tag-bc">BC Extension</span>
+        <h3>Taiwan Payroll for BC</h3>
+        <p>薪資試算、假勤管理、勞健保級距、G/L 過帳。符合台灣勞基法加班費率與生理假規定。</p>
+        <p style="margin-top:0.5rem"><a href="help/payroll.html">設定</a> · <a href="help/payroll-operations.html">操作</a></p>
+      </div>
+      <div class="product-card">
+        <span class="tag tag-bc">BC Extension</span>
+        <h3>Taiwan E-Invoice for BC</h3>
+        <p>銷售發票電子發票管線、ISV Client、上傳 Log，與財政部平台串接。</p>
+        <p style="margin-top:0.5rem"><a href="help/einvoice.html">設定</a> · <a href="help/einvoice-operations.html">操作</a></p>
+      </div>
+      <div class="product-card">
+        <span class="tag tag-api">API / MCP</span>
+        <h3>TW BizConnect API</h3>
+        <p>ERP 中介服務層（L2）。提供統一 REST 介面，將正航、鼎新等 ERP 資料接入 AI 工具；ERP 更換時上層 MCP 不需改寫。</p>
+      </div>
+      <div class="product-card">
+        <span class="tag tag-hr">HR Portal</span>
+        <h3>TW HR Self-Service</h3>
+        <p>員工自助入口 SDK。請假申請、加班申請、薪資單查詢，透過 BizConnect API 與後端 ERP 同步。</p>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>產品</th><th>類型</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Taiwan Payroll for BC</td>
+          <td>BC Extension</td>
+          <td>薪資試算、假勤、勞健保級距、G/L 過帳</td>
+        </tr>
+        <tr>
+          <td>Taiwan E-Invoice for BC</td>
+          <td>BC Extension</td>
+          <td>電子發票管線、ISV Client、上傳 Log</td>
+        </tr>
+        <tr>
+          <td>TW BizConnect API</td>
+          <td>REST API + MCP</td>
+          <td>ERP 中介層；O2C / P2P / HR / Finance 模組；支援 CHIAdapter（正航）、DigiwinAdapter（鼎新）、DataverseAdapter</td>
+        </tr>
+        <tr>
+          <td>TW HR Self-Service</td>
+          <td>HR Portal SDK</td>
+          <td>員工自助請假、加班、薪資單查詢</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>客戶</h2>
+
+    <div class="client-cards">
+      <div class="client-card">
+        <div class="label">製造業</div>
+        <h3>穩得實業</h3>
+        <p>正航 ERP 導入 TW BizConnect API；MCP 連接 Claude Desktop 與 Antigravity，AI 查詢委託單、應收、採購。</p>
+      </div>
+      <div class="client-card">
+        <div class="label">教育 / 大學</div>
+        <h3>世新大學</h3>
+        <p>校務系統 AI 整合先導計畫；DataverseAdapter 連接校務資料，AI 查詢預算、補助款、人事資料。</p>
+      </div>
+      <div class="client-card">
+        <div class="label">漁產批發</div>
+        <h3>臺北漁產運銷</h3>
+        <p>Business Central 台灣在地化；拍賣作業、BC 同步佇列、電子發票管線，搭配 Taiwan Payroll for BC。</p>
+      </div>
+    </div>
+
+    <h2>入門與訂閱</h2>
+    <ul>
+      <li><a href="pricing.html"><strong>訂閱方案</strong></a> — AppSource 延伸模組與雲端 API 定價</li>
+      <li><a href="getting-started.html"><strong>入門指南</strong></a> — 從 AppSource 取得、安裝、權限、首次設定</li>
+    </ul>
+
+    <h2>法律文件</h2>
+    <ul>
+      <li><a href="privacy.html">隱私權聲明</a></li>
+      <li><a href="eula.html">使用者授權合約（EULA）</a></li>
+    </ul>
+    <p>支援：<strong>support@vibe-coding.tw</strong> · 訂閱見 <a href="pricing.html">訂閱方案</a> · AppSource listing 金流由 Microsoft 處理。</p>
+  </main>
+  <footer>© Taiwan Vibe Coding · 最後更新 2026-06-29</footer>
+</body>
+</html>
