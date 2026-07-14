@@ -61,6 +61,55 @@ nav.top a {
 nav.top a:hover { text-decoration: underline; }
 nav.top .sep { color: #a8a29e; }
 
+nav.top a.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4px;
+  text-decoration: none;
+}
+nav.top a.brand-mark:hover { text-decoration: none; opacity: 0.88; }
+nav.top .brand-logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 16px;
+}
+.site-brand:hover { opacity: 0.92; }
+.site-brand .brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+.site-brand .brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.25;
+}
+.site-brand .brand-name {
+  font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.site-brand .brand-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
 header.doc-head {
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;

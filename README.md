@@ -17,8 +17,8 @@
 
 | 路徑 | 網址 |
 |------|------|
-| AppSource 文件 | https://taiwan-vibe-coding.github.io/web/ |
-| 穩得四天課 HTML | https://taiwan-vibe-coding.github.io/web/wendell/ |
+| AppSource 文件 | https://platform.vibe-coding.tw/ （別名 `taiwan-vibe-coding.github.io/web`） |
+| 穩得四天課 HTML | https://platform.vibe-coding.tw/wendell/ |
 
 教材來源：`projects/wendell/docs/curriculum-site/`（含 Bearer 的 `_print/` 列印檔不會同步）。
 
