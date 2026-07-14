@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="tvcTitle tvcDesc">
+  <title id="tvcTitle">Taiwan Vibe Coding</title>
+  <desc id="tvcDesc">Teal mark with a connected V path</desc>
+  <rect width="64" height="64" rx="14" fill="#0f766e"/>
+  <!-- Soft grid hint (ERP / data) -->
+  <path d="M18 22h28M18 32h28M18 42h16" stroke="#99f6e4" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+  <!-- Vibe V + node -->
+  <path d="M16 16 L32 46 L48 16" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="46" r="5" fill="#ccfbf1"/>
+  <circle cx="16" cy="16" r="3.2" fill="#ffffff"/>
+  <circle cx="48" cy="16" r="3.2" fill="#ffffff"/>
+</svg>

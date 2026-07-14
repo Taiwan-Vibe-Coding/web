@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Cache-Control" content="no-cache"/>
 <title>Day 3 練習題 · 採購與財務的 AI 查詢助理</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="favicon.ico?v=3" sizes="any"/>
+<link rel="icon" href="favicon.svg?v=3" type="image/svg+xml"/>
+<link rel="icon" href="favicon-32.png?v=3" type="image/png" sizes="32x32"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=3"/>
 <link rel="stylesheet" href="style.css?v=9"/>
 </head>
 <body>
@@ -47,7 +50,6 @@
 <p>先問出系統裡所有廠商：</p>
 <pre class="worksheet"><code>我的第一個問法：
 
-
 Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <h3 id="step-2條件篩選10-分鐘">Step 2：條件篩選（10 分鐘）</h3>
 <p>試試以下幾個問法，看哪個最清楚：</p>
@@ -58,7 +60,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <p><strong>問法 C：要求整理格式</strong></p>
 <pre class="copy-prompt"><code>把所有廠商整理成一個表格，欄位包含：廠商名稱、國別、付款條件、聯絡人、電話。</code></pre>
 <pre class="worksheet"><code>你試了哪個問法？
-
 
 結果：</code></pre>
 <pre class="copy-prompt"><code>哪個格式最方便你直接傳給主管？</code></pre>
@@ -77,12 +78,9 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 </ol>
 <pre class="worksheet"><code>1.
 
-
 2.
 
-
 3.
-
 
 4.
 </code></pre>
@@ -97,7 +95,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <p>主管說：「上半年有沒有採購單預計到貨但還沒到的？」 你知道系統裡有幾張採購單，但一直沒有時間去確認進度。</p>
 <h3 id="step-1列出所有採購單10-分鐘">Step 1：列出所有採購單（10 分鐘）</h3>
 <pre class="worksheet"><code>我的問法：
-
 
 系統裡有幾張採購單？列出它們的：
 - 採購單號：
@@ -145,7 +142,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <h3 id="step-1全局查詢10-分鐘-1">Step 1：全局查詢（10 分鐘）</h3>
 <pre class="worksheet"><code>我的問法：
 
-
 系統裡有幾筆應付帳款？
 總未付金額：
 有沒有逾期的：</code></pre>
@@ -158,7 +154,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <p><strong>問法 C：查特定廠商</strong></p>
 <pre class="copy-prompt"><code>SGS 台灣有沒有未付的發票？發票號是什麼？</code></pre>
 <pre class="worksheet"><code>你試了哪個問法：
-
 
 結果：</code></pre>
 <h3 id="step-3串接查詢15-分鐘">Step 3：串接查詢（15 分鐘）</h3>
@@ -207,7 +202,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <pre class="copy-prompt"><code>有哪些客戶？</code></pre>
 <pre class="worksheet"><code>我的問法：
 
-
 系統裡有幾個客戶？列出名稱：</code></pre>
 <h3 id="step-2查委託案進度12-分鐘">Step 2：查委託案進度（12 分鐘）</h3>
 <pre class="copy-prompt"><code>山田電機目前有哪些委託案？進度到哪了？</code></pre>
@@ -220,7 +214,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <h3 id="step-3應收帳款8-分鐘">Step 3：應收帳款（8 分鐘）</h3>
 <pre class="copy-prompt"><code>目前有哪些應收帳款還沒收到款？有沒有逾期的？逾期金額是多少？發票號碼呢？</code></pre>
 <pre class="worksheet"><code>回傳結果：
-
 
 最有價值的資訊是：</code></pre>
 <h3 id="討論問題-1">討論問題</h3>
@@ -249,7 +242,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <h3 id="討論問題-2">討論問題</h3>
 <p>如果發票明細裡有一行的單價跟報價單不一致，這是 Codex 該判斷的事，還是人該判斷的事？</p>
 <pre class="worksheet"><code>我的想法：
-
 
 </code></pre>
 <hr />
@@ -283,7 +275,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 平均的付款天數（下單到到期日）是幾天？有沒有明顯偏長或偏短的？</code></pre>
 <pre class="worksheet"><code>你覺得哪一個問法讓 Codex 的回答更有用？差在哪裡？
 
-
 </code></pre>
 <h3 id="step-3圖表給主管的一頁報告6-分鐘">Step 3：圖表＋給主管的一頁報告（6 分鐘）</h3>
 <p>請根據剛才的分析，產出「給主管的一頁分析報告」：</p>
@@ -302,7 +293,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 </blockquote>
 <pre class="worksheet"><code>我的想法：
 
-
 </code></pre>
 <hr />
 <h2 id="延伸練習八專案與合約選修15-分鐘">延伸練習八：專案與合約（選修，15 分鐘）</h2>
@@ -319,7 +309,6 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <h3 id="討論問題-4">討論問題</h3>
 <p>這兩個查詢跟前面練習一到四查的廠商/採購單/客戶資料，有什麼不一樣？</p>
 <pre class="worksheet"><code>我的想法：
-
 
 </code></pre>
 <hr />
@@ -413,12 +402,9 @@ Codex 回傳了幾家廠商？列出名稱：</code></pre>
 <p>把 Session 2 作業裡你寫的問法，改寫成「整合式提問」——原本分開問的幾件事，合併成一句話。</p>
 <pre class="worksheet"><code>Session 2 原本的問法：
 
-
 整合式提問改寫後：
 
-
 你覺得省下最多時間的地方是：</code></pre>
-
 
 </div>
 <script src="copy-blocks.js?v=5" defer></script>
