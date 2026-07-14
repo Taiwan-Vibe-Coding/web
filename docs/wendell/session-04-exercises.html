@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<title>Day 4 練習題 · 讓 Codex 變成穩得自己的 AI 同事</title>
+<link rel="stylesheet" href="style.css?v=8"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-04-lesson-plan.html">上一份</a>
+  <a href="exercise-solutions.html">下一份</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 4 · Session 4 · 練習題</div>
+  <h1>讓 Codex 變成穩得自己的 AI 同事</h1>
+  <p class="lede">複合任務與結業</p>
+</header>
+
+<blockquote>
+<p><strong>課程日期</strong>：2026-07-31（五）・結業堂<br />
+<strong>工具</strong>：ChatGPT Work（Codex）+ 穩得 MCP 外掛（示範 ERP）<br />
+<strong>今天的目標產出</strong>：</p>
+<ul>
+<li>一段你自己的 System Prompt（帶走，可以直接用）</li>
+<li>一張你的部門<strong>「凡事問AI」</strong>（帶走，下週開始執行）</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="練習一複合任務查詢30-分鐘">練習一：複合任務查詢（30 分鐘）</h2>
+<h3 id="課堂說明">課堂說明</h3>
+<p>前三堂多半是「問一句、查一件」。今天要練的是：<strong>同一個對話裡查多件事，再整合成一份給主管看的摘要。</strong></p>
+<p>Session 3 課後作業寫過「整合式提問」——今天把它變成一份真正能用的週一快報。</p>
+<h3 id="情境">情境</h3>
+<p>每週一早上，主管要一份簡短的「公司現況快報」。以前要開好幾個畫面慢慢抄，今天請 Codex 一次查完、整理好。</p>
+<h3 id="step-1用自己的話先問8-分鐘">Step 1：用自己的話先問（8 分鐘）</h3>
+<p>不要照抄下面的範本。用你平常會跟同事講的話，請 Codex 做一份本週快報。</p>
+<pre class="worksheet"><code>我的問法：
+
+
+Codex 大概查了哪些方向？（休假／採購／帳款／其他）
+
+
+這份結果可以直接轉給主管嗎？
+□ 可以
+□ 要改格式
+□ 內容有問題：</code></pre>
+<h3 id="step-2換成結構化問法12-分鐘">Step 2：換成結構化問法（12 分鐘）</h3>
+<p>把同一件事改成下面這種「分區＋要什麼欄位」的問法，再跑一次，跟 Step 1 比較。</p>
+<pre class="copy-prompt"><code>請幫我整理一份穩得本週業務快報，格式如下：
+
+【人力】
+- 本週有哪些同仁在休假？各休幾天？
+
+【採購】
+- 有哪些採購單需要關注？（預計到貨已過、或金額比較大的）
+
+【應付】
+- 近期有哪些應付帳款還沒付？哪一筆最急？總金額大約多少？
+
+【應收】
+- 有哪些應收帳款還沒收到？有沒有逾期的？
+
+【建議行動】
+- 根據上面資料，列出 1–3 件這週該處理的事（需人工決策的標成「待主管決定」）
+
+繁體中文，條列，每項不超過兩行。</code></pre>
+<pre class="worksheet"><code>兩次差在哪裡？
+
+
+哪個部分差最多？是問法，還是系統資料本身？</code></pre>
+<h3 id="step-3同一個對話再追問一次7-分鐘">Step 3：同一個對話再追問一次（7 分鐘）</h3>
+<p>選一個追問（不要三個都做）：</p>
+<p><strong>A. 排出優先順序</strong></p>
+<pre class="copy-prompt"><code>剛才那份快報裡，最需要今天處理的是哪一件？為什麼？</code></pre>
+<p><strong>B. 換成英文</strong></p>
+<pre class="copy-prompt"><code>把這份快報改成英文版，給外籍顧問看。</code></pre>
+<p><strong>C. 想自動化</strong></p>
+<pre class="copy-prompt"><code>如果這份快報每週一早上要自動出現，我大概要做什麼設定？</code></pre>
+<pre class="worksheet"><code>我選的是：A／B／C
+
+
+Codex 的回答有用嗎？還缺什麼？</code></pre>
+<h3 id="討論問題">討論問題（3 分鐘）</h3>
+<ol type="1">
+<li>「建議行動」是 Codex 該下結論，還是人該下結論？</li>
+<li>如果快報裡有一筆資料明顯過時，你會怎麼處理——改問法，還是先通報資料負責人？</li>
+</ol>
+<hr />
+<h2 id="練習二寫你的-system-prompt40-分鐘">練習二：寫你的 System Prompt（40 分鐘）</h2>
+<h3 id="課堂說明-1">課堂說明</h3>
+<p>這是四堂課的技巧 4／4：System Prompt。把 RCFC 裡常重複的 Role／Context 固定下來，之後提問專注 Format 與 Constraint。寫好後用同一句「有哪些採購單需要處理？」對比有／無 System Prompt 的差異。</p>
+<h3 id="什麼是-system-prompt">什麼是 System Prompt？</h3>
+<p>System Prompt 是你在每次對話開始前，告訴 Codex 的背景設定。 寫好之後，Codex 每次回答都會帶著這個背景，不用每次都解釋。</p>
+<p><strong>沒有 System Prompt：</strong></p>
+<blockquote>
+<p>你問：「有沒有快到期的款項？」<br />
+Codex 可能問：「你指的是哪種款項？應付還是應收？哪家公司？」</p>
+</blockquote>
+<p><strong>有 System Prompt：</strong></p>
+<blockquote>
+<p>Codex 直接查應付帳款，用台幣顯示，標出最快到期的，用中文條列回傳。</p>
+</blockquote>
+<h3 id="step-1填寫你的角色資訊10-分鐘">Step 1：填寫你的角色資訊（10 分鐘）</h3>
+<p>提供你自己的資訊：</p>
+<p>公司名稱：穩得實業股份有限公司<br />
+公司業務：EMC 電磁相容性測試服務實驗室，客戶主要是台灣、日本、韓國電子廠<br />
+我的部門：＿＿＿＿＿＿＿＿＿＿<br />
+我的職稱：＿＿＿＿＿＿＿＿＿＿</p>
+<p>我最常查詢的資料：<br />
+□ 我的請假與薪資<br />
+□ 廠商與採購單<br />
+□ 應付/應收帳款<br />
+□ 員工出勤<br />
+□ 其他：＿＿＿＿＿</p>
+<p>格式偏好：<br />
+□ 用繁體中文<br />
+□ 條列清楚<br />
+□ 數字加上單位（元、天、筆）<br />
+□ 需要處理的項目標記「⚠️」<br />
+□ 其他：＿＿＿＿＿</p>
+<h3 id="step-2組合成-system-prompt15-分鐘">Step 2：組合成 System Prompt（15 分鐘）</h3>
+<p>根據剛才提供的資訊，寫成一段 System Prompt。 格式不限，用你覺得最自然的方式寫。</p>
+<p><strong>參考結構（可以調整）：</strong></p>
+<pre class="copy-prompt"><code>我是穩得實業的 AI 助理，協助[你的部門]的[你的職稱]。
+穩得是一家提供 EMC 測試服務的實驗室，客戶為電子製造商。
+
+我常用的查詢：[你最常問的 2-3 件事]
+
+回答格式請遵守：
+- 繁體中文
+- [我的格式偏好]
+- 需要緊急處理的事項請在最前面標示</code></pre>
+<p><strong>你的 System Prompt（寫在這裡）：</strong></p>
+<pre class="worksheet"><code>（寫你自己的版本）</code></pre>
+<h3 id="step-3測試你的-system-prompt20-分鐘">Step 3：測試你的 System Prompt（20 分鐘）</h3>
+<p>新開一個 Codex 任務（New task），問一個平常你會問的問題。然後把你的 System Prompt 貼在最前面，再把這一個平常你會問的問題問一次。</p>
+<p><strong>測試問題：</strong></p>
+<pre class="worksheet"><code>我的測試問題：
+
+
+有 System Prompt 的回答 vs. 沒有的回答，差在哪裡？
+
+
+需要修改 System Prompt 的地方：</code></pre>
+<h3 id="分組分享每組-2-分鐘">分組分享（每組 2 分鐘）</h3>
+<p>把你的 System Prompt 唸給旁邊的人聽，讓他們幫你評估： - 背景說明夠不夠清楚？ - 格式要求有沒有遺漏？ - 有沒有寫到「不需要 Codex 解釋的事」（讓回答更精簡）？</p>
+<p><strong>之後要長期固定用：</strong> 把定稿貼到 Personalization → <strong>Custom instructions</strong>（路徑：左側 Plugins → 右上角 Manage → 左側 Personalization；或個人選單 → Settings → Personalization）。今天 Step 3 用「貼在 New task 最前面」是為了對比有／沒有的差別；寫進 Custom instructions 之後，之後開新任務就不用每次重貼。</p>
+<hr />
+<h2 id="練習三設計你的部門-ai-凡事問ai35-分鐘">練習三：設計你的部門<strong>「凡事問AI」</strong>（35 分鐘）</h2>
+<h3 id="課堂說明-2">課堂說明</h3>
+<p>System Prompt 解決「Codex 知道你是誰」；<strong>「凡事問AI」</strong>解決「你每天/每週/每月要問 Codex 什麼」。可按部門分組：實驗室／業務／行政／採購／MIS。全班分享時觀察：資料需求有沒有重疊？哪些目前系統還做不到？</p>
+<p>這個練習的目的是讓 Codex 從「偶爾用一次」變成「每天/每週/每月固定用」。</p>
+<h3 id="step-1列出你的週期性工作15-分鐘">Step 1：列出你的週期性工作（15 分鐘）</h3>
+<p>想一下你每天、每週、每月固定要做的事，哪些需要查 ERP 資料：</p>
+<pre class="worksheet"><code>每天必做：
+1.
+2.
+3.
+
+每週必做：
+1.
+2.
+3.
+
+每月必做：
+1.
+2.
+
+這些工作裡，哪幾個目前最花時間？</code></pre>
+<h3 id="step-2評估哪些可以用-codex-協助15-分鐘">Step 2：評估哪些可以用 Codex 協助（15 分鐘）</h3>
+<p>對照系統目前的工具，評估可行性：</p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr>
+<th>工具</th>
+<th>能查什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>個人假單與薪資</td>
+<td>我的請假紀錄、薪資明細</td>
+</tr>
+<tr>
+<td>廠商查詢</td>
+<td>廠商資料、付款條件、聯絡人</td>
+</tr>
+<tr>
+<td>採購單查詢</td>
+<td>採購進度、到貨日期</td>
+</tr>
+<tr>
+<td>應付帳款</td>
+<td>未付款項、到期日</td>
+</tr>
+<tr>
+<td>員工查詢</td>
+<td>員工基本資料、部門</td>
+</tr>
+<tr>
+<td>請假申請</td>
+<td>提交年假、病假等申請</td>
+</tr>
+<tr>
+<td>總帳／試算表／損益</td>
+<td>科目餘額、試算表、毛利率、營業利益</td>
+</tr>
+<tr>
+<td>庫存查詢</td>
+<td>品項清單、庫存水位、是否低於再訂購點</td>
+</tr>
+<tr>
+<td>發票明細</td>
+<td>銷售發票的每一行測項與金額</td>
+</tr>
+<tr>
+<td>加班查詢／申請</td>
+<td>我的加班紀錄、預覽並送出加班申請</td>
+</tr>
+</tbody>
+</table>
+<pre class="worksheet"><code>我的工作清單裡，目前系統可以協助的有：
+1.
+2.
+3.
+
+目前系統做不到、但我很需要的：
+1.
+2.</code></pre>
+<h3 id="step-3在-codex-上把凡事問ai跑起來15-分鐘">Step 3：在 Codex 上把<strong>「凡事問AI」</strong>跑起來（15 分鐘）</h3>
+<p>把 Step 2「系統可以協助」的前 1～3 件事，<strong>真的在 Codex 問一次</strong>。</p>
+<p><strong>1. 接受回答前先確認</strong></p>
+<p>不要直接把數字貼進報告。至少想過：</p>
+<ul>
+<li>期間／對象對不對（本週？哪個客戶／廠商／員工？）</li>
+<li>金額或筆數有沒有明顯不合理</li>
+<li>需不需要再對正航／鼎新或原始單據</li>
+</ul>
+<p><strong>2. 資料看起來不對時</strong></p>
+<p>先找同組或主管確認；確定是 ERP 資料本身的問題，再通報 <strong>MIS</strong>。</p>
+<p><strong>3.（選做）排進每週一</strong></p>
+<p>左側 <strong>Scheduled</strong> → 選 <strong>Weekly review</strong>（或類似範本）→ 把你「每週一早上」要問的 1～3 句貼進去，設成每週一。</p>
+<h3 id="全班分享每組-2-分鐘">全班分享（每組 2 分鐘）</h3>
+<p>各部門派一人，說明：</p>
+<ol>
+<li>你們剛才在 Codex <strong>實際問到</strong>的第一件事是什麼？回答有沒有用？</li>
+<li>有沒有什麼需求，是你希望系統以後能做到的？</li>
+</ol>
+<blockquote>
+<p>講師把「系統目前做不到的需求」記下來——這是穩得 AI 路線圖的輸入。</p>
+</blockquote>
+<hr />
+<h2 id="練習四讓-codex-安全地做事建立你自己的客戶與報價單25-分鐘">練習四：讓 Codex 安全地「做事」——建立你自己的客戶與報價單（25 分鐘）</h2>
+<h3 id="課堂說明-3">課堂說明</h3>
+<p>這四堂課多半在「查資料」。這個練習在業務資料上再走一次「預覽 → 確認」：<strong>建立屬於自己的客戶，再幫這個客戶建報價單</strong>。客戶名稱加自己的姓名英文縮寫前綴（例如 <code>YL_測試客戶</code>）。</p>
+<h3 id="為什麼要做這個練習">為什麼要做這個練習</h3>
+<p>前三堂課，Codex 做的都是「查資料」。Session 2 你申請過一次假單，體驗過「預覽 → 確認」——那是目前唯一一次讓 Codex「做事」而不只是「查資料」。</p>
+<p>其實 O2C／P2P 有一整套這樣的寫入工具（建立客戶、建立訂單、建立報價單、確認報價⋯），今天用其中兩個，讓大家再次體驗這個安全機制——這次是在「業務資料」上，而不是「我自己的假單」，而且是<strong>建立一個完全屬於你自己的新客戶</strong>，不是去動大家共用的山田電機。</p>
+<blockquote>
+<p><strong>今天的規則：姓名前綴，不是「只能預覽」</strong>。全班都真的走完「預覽 → 確認」兩步。差別在於：你建立的客戶名稱前面一律加上<strong>你自己的姓名英文縮寫</strong>（例如 <code>YL_測試客戶</code>）。這樣不管全班有幾個人同時操作，彼此的資料都不會撞名、不會互相蓋掉，<code>list_customers</code> 之後會看到一排 <code>YL_</code>、<code>WCH_</code> 這樣的前綴，一眼就能分辨是誰的練習資料。</p>
+</blockquote>
+<h3 id="情境-1">情境</h3>
+<p>你是業務同仁，要幫一個全新的客戶建檔並開一張測試報價。</p>
+<h3 id="step-1先查現有客戶感受一下規模5-分鐘">Step 1：先查現有客戶，感受一下規模（5 分鐘）</h3>
+<pre class="copy-prompt"><code>有哪些客戶？</code></pre>
+<h3 id="step-2建立你自己的新客戶10-分鐘">Step 2：建立你自己的新客戶（10 分鐘）</h3>
+<pre class="copy-prompt"><code>幫我新增一個客戶，名稱是「你的姓名英文縮寫_測試客戶」，國別台灣。
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>Codex 的回覆（新客戶的 ID 是？）：</code></pre>
+<blockquote>
+<p>名稱前綴（<code>你的縮寫_</code>）是今天最重要的規則——這是讓全班可以同時寫入同一個 demo 環境、卻不會互相干擾的關鍵設計，不是可有可無的細節。</p>
+</blockquote>
+<h3 id="step-3幫你的新客戶建一張報價單10-分鐘">Step 3：幫你的新客戶建一張報價單（10 分鐘）</h3>
+<blockquote>
+<p><strong>必填提醒</strong>：系統建立報價時需要 <strong>product_name</strong>（測項／產品名稱）。口語說「EMI 傳導雜訊測試一項」通常夠了；若預覽失敗，請明確補：「產品名稱寫 EMI 傳導雜訊測試」。</p>
+</blockquote>
+<pre class="copy-prompt"><code>幫剛才那個新客戶建一張報價單，產品名稱寫「EMI 傳導雜訊測試」，數量 1，單價 12000。
+先不要送出，給我看預覽。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>Codex 的回覆（記下報價單 ID，例如 `Q0xx`）：</code></pre>
+<h3 id="step-4確認報價單選做track-c-會用到5-分鐘">Step 4：確認報價單（選做，Track C 會用到；5 分鐘）</h3>
+<p>報價單建立後通常是草稿／報價中。若要走「報價 → 訂單」閉環，需再確認一次：</p>
+<pre class="copy-prompt"><code>幫我確認剛才那張報價單。
+先給我看預覽，不要送出。</code></pre>
+<p>核對無誤後再說：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<p>確認後狀態會變成已送出，延伸練習八才能用這張單轉訂單。</p>
+<blockquote>
+<p><strong>不要</strong>對既有的共用示範資料下手，例如「把 PO2026-001 改成已付款」「幫我改一下山田電機（<code>C001</code>）的資料」「刪除客戶 C001」——這些是 Session 3、4 反覆對照用的共用錨點。今天的練習設計是<strong>只建立你自己全新、有姓名前綴的客戶</strong>，不動任何既有記錄。</p>
+</blockquote>
+<h3 id="討論問題5-分鐘">討論問題（5 分鐘）</h3>
+<ol type="1">
+<li>這個「預覽 → 確認」跟 Session 2 申請假單時的機制，是同一回事嗎？</li>
+<li>今天全班都真的送出了，資料庫裡多了十幾筆新客戶——但因為每個人都有自己的姓名前綴，會不會覺得亂？這跟「大家都寫同一筆」的差別在哪？</li>
+<li>如果你是主管，會希望所有金額超過某個門檻的報價單都要多一層人工核准嗎？這個「門檻」該由誰決定？</li>
+</ol>
+<pre class="worksheet"><code>1.
+
+
+2.
+
+
+3.
+</code></pre>
+<hr />
+<h2 id="選修延伸依部門挑一條-track不用每人全部做完">選修延伸：依部門挑一條 track（不用每人全部做完）</h2>
+<blockquote>
+<p><strong>任何 Track 都不能壓縮 15:40 結業實作與發表。</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>依自己部門的相關程度，自己選一條 track</strong>——這樣每個人花的時間差不多，做的內容也剛好是自己用得到的那一種，難易度也比較貼近各自的背景（業務／財務同事本來就比較熟悉報價/發票的概念，行政／採購同事對廠商/採購單比較有感覺）。</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 29%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Track</th>
+<th>適合誰</th>
+<th>時間</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td><strong>全員適合</strong></td>
+<td>20 分鐘</td>
+<td>延伸練習五（報價試算 Excel＋可選互動網頁）</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>行政／採購</td>
+<td>25–40 分鐘</td>
+<td>延伸練習六（部門請購）＋延伸練習七（P2P 閉環）</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>業務／財務</td>
+<td>25 分鐘</td>
+<td>延伸練習八（報價轉訂單＋銷貨折讓）</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>管理／財務</td>
+<td>10 分鐘</td>
+<td>延伸練習九（財務報表速覽）</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="延伸練習五報價試算-excel可選互動網頁track-ａ全員適合20-分鐘">延伸練習五：報價試算 Excel＋可選互動網頁（Track Ａ：全員適合，20 分鐘）</h2>
+<h3 id="情境-2">情境</h3>
+<p>練習四建了一張報價單，但每次報價都要手動一項一項加總金額、算稅金。如果有一份「輸入測項跟數量，自動幫你算總價」的報價試算表，業務同仁自己就能用，不用每次都問 Codex。</p>
+<h3 id="step-1請-codex-產出一份帶公式的-excel8-分鐘">Step 1：請 Codex 產出一份帶公式的 Excel（8 分鐘）</h3>
+<p>我的任務描述：</p>
+<pre class="copy-prompt"><code>請幫我做一份 EMC 測試報價試算 Excel：
+- 欄位：測項名稱、單價、數量、小計
+- 小計欄用公式自動計算（單價×數量）
+- 最下面一列自動加總所有小計，並算 5% 營業稅
+- 先放 3 個範例測項：輻射干擾測試 15000、傳導干擾測試 12000、ESD 免疫測試 8000</code></pre>
+<pre class="worksheet"><code>Codex 產出的檔案：</code></pre>
+<h3 id="step-2測試工具是不是真的能用4-分鐘">Step 2：測試工具是不是真的能用（4 分鐘）</h3>
+<p>打開 Codex 產出的 Excel，改一下數量或單價，確認公式有沒有跟著重新計算。</p>
+<pre class="worksheet"><code>改了哪一格：
+公式有沒有正確更新：</code></pre>
+<h3 id="step-3時間夠再做5-分鐘簡單互動-html">Step 3（時間夠再做，5 分鐘）：簡單互動 HTML</h3>
+<pre class="copy-prompt"><code>請再做一個單檔 HTML：輸入單價與數量，按按鈕顯示未稅小計與含 5% 稅總價。
+介面繁中、樣式簡潔，我要能下載後用瀏覽器直接打開。</code></pre>
+<h3 id="step-4討論側欄檔案-vs-互動小工具3-分鐘">Step 4：討論——側欄檔案 vs 互動小工具（3 分鐘）</h3>
+<blockquote>
+<p>有的 AI 可在對話旁做網頁互動小工具。Codex 強項是<strong>產出真的能跑／能開的檔案</strong>（Word／Excel／PPT，側欄預覽後下載）。</p>
+</blockquote>
+<pre class="worksheet"><code>討論：對你平常的工作來說，「一份可以重複用的 Excel」跟「一個網頁上的互動小工具」，哪一種比較實用？為什麼？</code></pre>
+<hr />
+<h2 id="延伸練習六部門請購track-b行政／採購15-分鐘">延伸練習六：部門請購（Track B：行政／採購，15 分鐘）</h2>
+<h3 id="step-1查部門請購單狀態5-分鐘">Step 1：查部門請購單狀態（5 分鐘）</h3>
+<pre class="copy-prompt"><code>行政部門請購 UPS 電池，請購單目前是什麼狀態？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<h3 id="step-2建立你自己的請購單10-分鐘">Step 2：建立你自己的請購單（10 分鐘）</h3>
+<p>跟練習四一樣的規則：用途欄位加上你自己的姓名英文縮寫前綴，方便查出來的清單能分辨是誰的練習資料。</p>
+<pre class="copy-prompt"><code>幫我建一張請購單，品項是 UPS 電池 2 顆，用途寫『你的姓名縮寫_請購單』。
+先給我看預覽，不要送出。</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>Codex 的回覆（新請購單的編號是？）：</code></pre>
+<h3 id="討論問題">討論問題</h3>
+<ol type="1">
+<li>這個練習跟練習四的「建立客戶＋報價單」，寫入機制是不是同一套？</li>
+</ol>
+<hr />
+<h2 id="延伸練習七p2p-寫入閉環track-b行政／採購25-分鐘">延伸練習七：P2P 寫入閉環（Track B：行政／採購，25 分鐘）</h2>
+<h3 id="情境-3">情境</h3>
+<p>行政／採購同事今天要開發一家全新的廠商，從建檔、下採購單，到貨到後辦理收貨，走一次完整流程。</p>
+<h3 id="step-1建立你自己的新廠商8-分鐘">Step 1：建立你自己的新廠商（8 分鐘）</h3>
+<pre class="copy-prompt"><code>幫我新增一個廠商，名稱是「你的姓名英文縮寫_測試廠商」，國別台灣。
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>新廠商的 ID 是？</code></pre>
+<h3 id="step-2對這家新廠商下一張採購單10-分鐘">Step 2：對這家新廠商下一張採購單（10 分鐘）</h3>
+<blockquote>
+<p><strong>必填提醒</strong>：系統建立採購單時一定要有<strong>採購單名稱（name）</strong>與<strong>廠商 ID</strong>；只說「品項／數量」可能預覽失敗。可照下面問法一次講清楚。</p>
+</blockquote>
+<p>幫剛才那個新廠商建一張採購單：</p>
+<pre class="copy-prompt"><code>- 採購單名稱：你的姓名英文縮寫_示範採購
+- 品項說明：UPS 電池
+- 數量：2
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>新採購單的編號是？</code></pre>
+<h3 id="step-3辦理收貨7-分鐘">Step 3：辦理收貨（7 分鐘）</h3>
+<pre class="copy-prompt"><code>剛才那張採購單到貨了，幫我建一筆收貨記錄。
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>Codex 的回覆：</code></pre>
+<h3 id="討論問題-1">討論問題</h3>
+<ol type="1">
+<li>從「新增廠商」到「下採購單」再到「收貨」，這三步都要各自預覽確認，還是可以請 Codex 一次做完？你會希望是哪一種？</li>
+<li>如果收貨數量跟採購單上的數量不一致，你會希望 Codex 怎麼提醒你？</li>
+</ol>
+<pre class="worksheet"><code>1.
+
+
+2.
+
+
+3.
+</code></pre>
+<hr />
+<h2 id="延伸練習八報價轉訂單銷貨折讓track-c業務財務25-分鐘">延伸練習八：報價轉訂單＋銷貨折讓（Track C：業務／財務，25 分鐘）</h2>
+<h3 id="step-1報價確認後轉成正式訂單10-分鐘">Step 1：報價確認後，轉成正式訂單（10 分鐘）</h3>
+<p>報價單一旦確認（練習四請做到「確認這張報價單」），業務下一步通常是把它轉成一張正式的委託案／訂單，方便後續追蹤測試與出貨進度。</p>
+<blockquote>
+<p><strong>必填提醒</strong>：建立訂單時系統需要 <strong>customer_id</strong> 與 <strong>product_name</strong>（產品／測項名稱）。若只說「用剛才那張報價轉訂單」而 AI 沒帶出產品名稱，請補一句：「產品名稱用 EMI 傳導雜訊測試」。</p>
+</blockquote>
+<pre class="copy-prompt"><code>幫我用剛才確認的報價單建一張訂單。
+客戶沿用該報價的客戶；產品名稱寫「EMI 傳導雜訊測試」。
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>新訂單的編號是？</code></pre>
+<p>訂單建好後，試著推進它的狀態（例如從「已確認」改成「進行中」）：</p>
+<pre class="copy-prompt"><code>把這張訂單的狀態改成「進行中」。</code></pre>
+<pre class="worksheet"><code>Codex 的回覆：</code></pre>
+<h3 id="討論問題-step1">討論問題</h3>
+<ol type="1">
+<li>這一步跟「建立新客戶」「建立報價單」是同一套安全機制嗎？差在哪裡？</li>
+</ol>
+<h3 id="step-2查一下要折讓的發票3-分鐘">Step 2：查一下要折讓的發票（3 分鐘）</h3>
+<pre class="copy-prompt"><code>SINV-2026-041 這張發票的內容是什麼？</code></pre>
+<h3 id="step-3建立銷貨折讓單12-分鐘">Step 3：建立銷貨折讓單（12 分鐘）</h3>
+<pre class="copy-prompt"><code>幫 SINV-2026-041 這張發票建一張銷貨折讓單，原因寫「你的姓名縮寫_測試項目數量認列錯誤」。
+先給我看預覽，不要送出。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
+<p>核對無誤後：</p>
+<pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
+<pre class="worksheet"><code>新折讓單的編號是？</code></pre>
+<p>如果時間充裕，也可以換成採購那一邊試試看：</p>
+<pre class="copy-prompt"><code>幫 AP-2026-045 這張採購發票建一張採購折讓單，原因寫「示範—你的姓名縮寫，驗收數量短少」。
+先給我看預覽，不要送出。</code></pre>
+<h3 id="討論問題-2">討論問題</h3>
+<ol type="1">
+<li>從「建客戶」到「建報價」再到「轉訂單」「改狀態」，這一路都是同一種「預覽 → 確認」模式，你覺得這個模式適合套用到公司裡哪些其他的流程？</li>
+<li>折讓單建立後，通常還需要「過帳」才會真的影響應收/應付餘額——這跟前面「建立」和「送出」分成兩步的邏輯像不像？為什麼財務類單據常常要拆成「建立」跟「過帳」兩個動作，而不是一步到位？</li>
+</ol>
+<pre class="worksheet"><code>1.
+
+
+2.
+
+
+3.
+</code></pre>
+<hr />
+<h2 id="延伸練習九財務報表速覽track-d管理財務10-分鐘">延伸練習九：財務報表速覽（Track D：管理／財務，10 分鐘）</h2>
+<p>適合對財務數字有興趣的人。</p>
+<h3 id="step-1加一段財務概況">Step 1：加一段財務概況</h3>
+<p>在練習一的快報對話裡（或新開一個對話）繼續問：</p>
+<pre class="copy-prompt"><code>再幫我加一段【財務概況】：
+- 損益類科目目前的餘額各是多少？
+- 用今年到 6 月底的資料，算一下毛利率跟營業利益。
+- 2026 年 6 月的試算表，借貸有沒有平衡？</code></pre>
+<pre class="worksheet"><code>Codex 算出來的毛利率／營業利益：
+
+
+試算表借貸平衡嗎？如果不平衡，你覺得是資料的問題還是 Codex 算錯？</code></pre>
+<h3 id="step-2看一眼資產負債表">Step 2：看一眼資產負債表</h3>
+<pre class="copy-prompt"><code>再幫我查一下目前的資產負債表大概長什麼樣子。</code></pre>
+<pre class="worksheet"><code>Codex 回傳的重點：
+
+
+</code></pre>
+<h3 id="討論問題-track-d">討論問題</h3>
+<p>老闆問「毛利率是不是太低了」——該 Codex 回答，還是找財務主管？</p>
+<hr />
+<h2 id="結業實作我的部門-ai-工作手冊20-分鐘">結業實作：我的部門 AI 工作手冊（20 分鐘）</h2>
+<p>把今天練習二、練習三的成果，整理成一頁帶得走的手冊：</p>
+<pre class="worksheet"><code>【我的部門 AI 工作手冊】— ___部門
+
+1. 我的 System Prompt（練習二成果，可直接複製貼上使用）：
+
+
+2. Personalization：我已設定的偏好（一句話）：
+
+
+3. 我啟用的 Plugins／MCP（至少 wendell-dataverse）：
+
+
+4. 我的「凡事問AI」：每週固定會問 Codex 的 3 件事（練習三成果）：
+①
+②
+③
+（可含 1 項 Scheduled／會議摘要）
+
+5. 回去之後，我要用 Codex 做的第一件事是：
+
+
+6. 如果卡住了，我會找（MIS／自己重讀哪堂課的講義）：
+
+
+7.（MIS／組長選填）部門共用 Plugin／MCP／模板誰維護、誰審核寫入：
+</code></pre>
+<p>每組（或每人）用 1 分鐘跟全班分享手冊內容。這份手冊建議拍照或掃描存起來——四堂課的內容，不會因為下課就忘記。</p>
+<hr />
+<h2 id="附錄四堂課工具總覽">附錄：四堂課工具總覽</h2>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>堂次</th>
+<th>工具</th>
+<th>適合誰</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session 1</td>
+<td>Codex</td>
+<td>全員</td>
+<td>文件自動化、語言任務、Personalization／Plugins／文件研究</td>
+</tr>
+<tr>
+<td>Session 2</td>
+<td>請假 / 薪資 + MCP</td>
+<td>全員</td>
+<td>查個人假單、薪資、申請請假；Scheduled 選修</td>
+</tr>
+<tr>
+<td>Session 3</td>
+<td>採購 / 財務</td>
+<td>行政、財務</td>
+<td>查廠商、採購單、應付帳款；數據分析一頁報告</td>
+</tr>
+<tr>
+<td>Session 4</td>
+<td>複合查詢</td>
+<td>全員</td>
+<td>System Prompt、凡事問AI、檔案產出／自動化導覽、結業手冊</td>
+</tr>
+</tbody>
+</table>
+<p><strong>穩得 MCP 外掛目前支援的工具：</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>工具</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_absences</code></td>
+<td>查我的請假紀錄</td>
+</tr>
+<tr>
+<td><code>get_my_payslip</code></td>
+<td>查我的薪資明細</td>
+</tr>
+<tr>
+<td><code>submit_leave</code></td>
+<td>申請請假（需確認）</td>
+</tr>
+<tr>
+<td><code>list_employees</code></td>
+<td>查員工基本資料</td>
+</tr>
+<tr>
+<td><code>list_vendors</code></td>
+<td>查廠商</td>
+</tr>
+<tr>
+<td><code>list_purchase_orders</code></td>
+<td>查採購單</td>
+</tr>
+<tr>
+<td><code>list_ap_balances</code></td>
+<td>查應付帳款</td>
+</tr>
+<tr>
+<td><code>list_ar_balances</code></td>
+<td>查應收帳款</td>
+</tr>
+<tr>
+<td><code>platform_health</code></td>
+<td>系統健康狀態</td>
+</tr>
+<tr>
+<td><code>list_customers</code> / <code>list_orders</code> / <code>list_quotations</code></td>
+<td>查客戶、委託案、報價單</td>
+</tr>
+<tr>
+<td><code>create_customer</code></td>
+<td>建立新客戶</td>
+</tr>
+<tr>
+<td><code>create_quotation</code> / <code>confirm_quotation</code></td>
+<td>建立並確認報價單</td>
+</tr>
+<tr>
+<td><code>list_gl_accounts</code> / <code>get_trial_balance</code> / <code>get_pl_summary</code> / <code>get_balance_sheet</code></td>
+<td>總帳科目、試算表、損益摘要、資產負債表</td>
+</tr>
+<tr>
+<td><code>list_items</code> / <code>list_stock_levels</code></td>
+<td>品項主檔、庫存水位</td>
+</tr>
+<tr>
+<td><code>get_sales_invoice</code> / <code>list_sales_invoice_lines</code></td>
+<td>銷售發票明細行</td>
+</tr>
+<tr>
+<td><code>list_my_overtime_requests</code> / <code>submit_overtime</code></td>
+<td>查／申請加班</td>
+</tr>
+<tr>
+<td><code>list_purchase_invoices</code> / <code>get_purchase_invoice</code></td>
+<td>採購發票</td>
+</tr>
+<tr>
+<td><code>query_invoice_status</code></td>
+<td>電子發票上傳狀態</td>
+</tr>
+<tr>
+<td><code>list_purchase_requisitions</code> / <code>get_purchase_requisition</code></td>
+<td>請購單查詢</td>
+</tr>
+<tr>
+<td><code>create_purchase_requisition</code> / <code>submit_purchase_requisition</code></td>
+<td>建立並送出請購單</td>
+</tr>
+<tr>
+<td><code>create_vendor</code> / <code>create_purchase_order</code> / <code>create_goods_receipt</code></td>
+<td>P2P 寫入閉環：新增廠商 → 下採購單 → 收貨</td>
+</tr>
+<tr>
+<td><code>create_order</code> / <code>update_order_status</code></td>
+<td>報價確認後轉成正式訂單、推進訂單狀態</td>
+</tr>
+<tr>
+<td><code>list_sales_credit_memos</code> / <code>get_sales_credit_memo</code> / <code>create_sales_credit_memo</code> / <code>post_sales_credit_memo</code></td>
+<td>銷貨折讓單查詢與開立過帳</td>
+</tr>
+<tr>
+<td><code>list_purchase_credit_memos</code> / <code>get_purchase_credit_memo</code> / <code>create_purchase_credit_memo</code> / <code>post_purchase_credit_memo</code></td>
+<td>採購折讓單查詢與開立過帳</td>
+</tr>
+<tr>
+<td><code>create_expense_report</code> / <code>submit_expense_report</code></td>
+<td>建立並送出費用報銷單</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<script src="copy-blocks.js?v=9" defer></script>
+</body>
+</html>

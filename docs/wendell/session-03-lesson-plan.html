@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<title>Day 3 課程計畫 · 採購與財務的 AI 查詢助理</title>
+<link rel="stylesheet" href="style.css?v=5"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-02-exercises.html">上一份</a>
+  <a href="session-03-exercises.html">下一份</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 3 · Session 3 · 課程計畫</div>
+  <h1>採購與財務的 AI 查詢助理</h1>
+  <p class="lede">公司資料整合查詢</p>
+</header>
+<blockquote>
+<p><strong>日期</strong>：2026-07-28（二）</p>
+<p><strong>時長</strong>：3 小時</p>
+<p><strong>對象</strong>：行政採購、財務、管理層、實驗室、業務</p>
+<p><strong>工具</strong>：ChatGPT Work（Codex）+ 穩得 MCP 外掛（示範 ERP）</p>
+<p><strong>需要 ERP 連線</strong>：✅ 需要</p>
+<p><strong>講師</strong>：陳育亮教授</p>
+<p><strong>稱呼</strong>：ChatGPT Work＝App；Codex＝派任務能力；穩得 MCP 外掛＝連示範 ERP。</p>
+</blockquote>
+<hr />
+<h2 id="課程目標">課程目標</h2>
+<p>學員結束時能做到：</p>
+<ol>
+  <li>用自然語言查詢廠商資料、採購單狀態、應付帳款明細</li>
+  <li>讓 Codex 把多個查詢結果<strong>串起來分析</strong>，不用自己在 Excel 彙整</li>
+  <li>說出「Codex 整理資料」和「Codex 做決定」的差別</li>
+  <li>識別哪些判斷必須由人負責，Codex 只能提供資訊</li>
+</ol>
+<hr />
+<h2 id="各節詳細內容">各節詳細內容</h2>
+<h3 id="作業分享-角色轉換15-分鐘">13:00–13:15 作業分享 + 角色轉換（15 分鐘）</h3>
+<p><strong>作業分享（8 分鐘）：Session 2 的「我想查的公司資料」</strong></p>
+<p>請 2-3 位學員分享作業：自己部門每週要查的公司資料、用 RCFC 寫的問法草稿。</p>
+<p>講師記下大家提到的資料需求——待會練習如果剛好對得上，可以直接拿出來驗證；對不上的，記下來留給 Session 4 的<strong>「凡事問AI」</strong>練習用。</p>
+<p><strong>回顧（7 分鐘）：</strong></p>
+<blockquote>
+<p>「上次大家用 Codex 查了自己的假單和薪資。對『預覽 → 確認』這個機制的想法有沒有改變？」</p>
+</blockquote>
+<p><strong>今天的轉換：</strong></p>
+<blockquote>
+<p>Session 2 我們查的是「我的」資料——我的假、我的薪資。 那些是個人隱私，系統限制你只能查自己的。</p>
+<p>今天我們查的是「公司的」資料——廠商、採購單、應付帳款。 這些是公開給有授權的同事看的業務資料。</p>
+<p>查詢的工具一樣，但<strong>資料的性質不同，使用的責任也不同</strong>。</p>
+</blockquote>
+<blockquote>
+<p><strong>今天全程唯讀，沒有任何寫入練習。</strong> <code>PO2026-001</code>、<code>PO2026-002</code>、<code>C001</code>（山田電機）、<code>C003</code>（台達）、<code>V003</code>（全誠校正）、<code>V004</code>（SGS 台灣）、<code>V005</code>（承澤科技）這些是今天跟下堂課反覆對照用的共用示範資料。</p>
+</blockquote>
+<hr />
+<h3 id="概念ai-整理資料人做決定25-分鐘">13:15–13:40 概念：AI 整理資料，人做決定（25 分鐘）</h3>
+<h4 id="這堂課要解決的問題">這堂課要解決的問題</h4>
+<p>行政採購同事平常的一個典型工作流：</p>
+<p>問題：「這張採購單付款了嗎？付款條件是什麼？廠商的聯絡人是誰？」</p>
+<p>原本的做法：</p>
+<ol>
+<li>打開 ERP 找採購單</li>
+<li>切換到廠商主檔找聯絡人</li>
+<li>切換到應付帳款確認付款狀態</li>
+<li>三個畫面來回，手動彙整</li>
+</ol>
+<p>用 Codex 的做法：</p>
+<pre class="copy-prompt"><code>PO2026-001 付款了嗎？廠商的聯絡人和付款條件是什麼？</code></pre>
+<p>→ Codex 查三個地方，整理成一段話回傳</p>
+<p><strong>現場 Demo（講師操作）：</strong></p>
+<p>示範一：</p>
+<pre class="copy-prompt"><code>列出所有廠商，以付款條件分組。</code></pre>
+<p>示範二：</p>
+<pre class="copy-prompt"><code>PO2026-002 的狀態是什麼？預計到貨日期是？廠商是誰？聯絡人是？</code></pre>
+<p>示範三：</p>
+<pre class="copy-prompt"><code>目前有哪些應付帳款還沒付？總金額是多少？哪一筆最快到期？</code></pre>
+<p>觀察重點：</p>
+<ul>
+<li>Codex 是否在一個回答裡整合了多個查詢的結果？</li>
+<li>回傳的格式是否比 ERP 畫面更容易閱讀？</li>
+<li>Codex 有沒有「建議要趕快付哪筆」？（如果有，這是好事還是壞事？）</li>
+</ul>
+<h4 id="整理和決定的界線">「整理」和「決定」的界線</h4>
+<table>
+<thead>
+<tr>
+<th>Codex 能做的</th>
+<th>Codex 不應該做的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列出所有逾期未付的發票</td>
+<td>決定要先付哪一筆</td>
+</tr>
+<tr>
+<td>計算總應付金額</td>
+<td>判斷是否要要求廠商延期</td>
+</tr>
+<tr>
+<td>找出付款期限最近的廠商</td>
+<td>代表公司與廠商溝通</td>
+</tr>
+<tr>
+<td>把資料整理成報告格式</td>
+<td>批准任何付款動作</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Codex 是你的<strong>資料助理</strong>，不是你的<strong>財務主管</strong>。 決定怎麼做，永遠是人的責任。</p>
+</blockquote>
+<p><strong>這是四堂課的技巧 3／4：整合式提問。</strong> 上面「示範二」「示範三」都是一次問裡藏了好幾件事（廠商＋狀態＋交期＋聯絡人）。技巧不是問得更複雜，是<strong>在一句話裡把你原本要跑三個畫面才能兜起來的資訊講清楚</strong>——Codex 會自己去查、自己整合，你只要審核結果對不對。</p>
+<hr />
+<h3 id="動手練習">13:40–15:40 動手練習</h3>
+<p>詳見 <a href="session-03-exercises.html">session-03-exercises</a></p>
+<ul>
+<li>練習一（30 分鐘）：查廠商</li>
+<li>練習二（30 分鐘）：查採購單</li>
+<li>練習三（25 分鐘）：查應付帳款</li>
+<li>練習四（25 分鐘）：查客戶與委託案（O2C）</li>
+<li>延伸練習五～八（選修，視時間；優先序見 exercises）：數據分析／發票明細／庫存／專案與合約／電子發票概念</li>
+</ul>
+<p><strong>練習規則</strong>：</p>
+<ol>
+<li>先用自己的話問，不要照格式</li>
+<li>記下 Codex 查了哪些資料來源</li>
+<li>試著讓 Codex「串接」多個查詢</li>
+<li>討論問題請認真作答，沒有標準答案</li>
+<li><strong>今天全程唯讀</strong></li>
+</ol>
+<h3 id="討論10-分鐘">15:40–15:50 討論（10 分鐘）</h3>
+<blockquote>
+<p>「今天 Codex 幫你查了廠商、採購單、應付帳款、客戶委託案。有沒有哪個查詢結果，讓你有點擔心？擔心什麼？」</p>
+</blockquote>
+<p>幾個可能方向：</p>
+<ul>
+<li>「萬一 Codex 的計算有錯？」→ 確認方式：直接核對原始發票</li>
+<li>「有授權問題嗎？誰可以查這些資料？」→ 這是 MIS 要設定的存取控制</li>
+<li>「如果資料不對，要找誰？」→ 找 ERP 管理員更新來源資料</li>
+</ul>
+<hr />
+<h3 id="預告-session-4-作業指派10-分鐘">15:50–16:00 預告 Session 4 + 作業指派（10 分鐘）</h3>
+<blockquote>
+<p>前三堂課，我們一直在「查」。</p>
+<p>最後一堂，我們要問一個更大的問題： <strong>Codex 能不能變成穩得自己的 AI 同事？</strong></p>
+<p>什麼叫自己的 AI 同事？就是它知道穩得是做什麼的、它知道你們的業務流程、它記得你常問什麼。</p>
+<p>Session 4 會教大家怎麼寫「讓 Codex 記住你是誰」的 System Prompt， 以及怎麼設計一個讓自己部門每週都能固定用的 Codex 習慣。</p>
+</blockquote>
+<p><strong>課後作業（必做，Session 4 開場分享）</strong></p>
+<p>用今天學到的「整合式提問」，把 Session 2 作業裡你寫的問法，改寫成「一次問多件事」的版本（例如：把三個分開的問題合併成一句）。帶著這個問法草稿來 Session 4，<strong>「凡事問AI」</strong>練習會直接用到。</p>
+<hr />
+<h2 id="本堂講義重點帶回去用">本堂講義重點（帶回去用）</h2>
+<p><strong>Codex 能整理 vs. 不應該做的決定</strong></p>
+<table>
+<thead>
+<tr>
+<th>Codex 能做的</th>
+<th>Codex 不應該做的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列出所有逾期未付的發票</td>
+<td>決定要先付哪一筆</td>
+</tr>
+<tr>
+<td>計算總應付金額</td>
+<td>判斷是否要求廠商延期</td>
+</tr>
+<tr>
+<td>找出付款期限最近的廠商</td>
+<td>代表公司與廠商溝通</td>
+</tr>
+<tr>
+<td>把資料整理成報告格式</td>
+<td>批准任何付款動作</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其他的示範問法清單</strong>（照樣造句用）：</p>
+<pre class="copy-prompt"><code>有哪些客戶？列出名稱與國別。</code></pre>
+<pre class="copy-prompt"><code>山田電機目前有哪些委託案？進度到哪了？</code></pre>
+<pre class="copy-prompt"><code>台達目前有哪些委託案？應收帳款還有沒有沒收的？</code></pre>
+<pre class="copy-prompt"><code>目前有哪些應收帳款還沒收到款？有沒有逾期的？</code></pre>
+<pre class="copy-prompt"><code>SINV-2026-041 這張發票的內容是什麼？金額多少？狀態是？</code></pre>
+<pre class="copy-prompt"><code>PO2026-001 的狀態是什麼？預計到貨日期是？已經過期了嗎？</code></pre>
+<pre class="copy-prompt"><code>幫我列出所有採購單，以及每張單對應的廠商名稱、付款條件和聯絡人，整理成表格。</code></pre>
+<pre class="copy-prompt"><code>SGS 台灣有沒有未付的發票？發票號是什麼？</code></pre>
+<pre class="copy-prompt"><code>哪些品項的庫存低於再訂購點？</code></pre>
+<pre class="copy-prompt"><code>幫我做一個付款追蹤摘要：未付應付帳款、對應採購單、哪筆最緊急。</code></pre>
+<p><strong>提醒</strong>：Codex 只能回傳 ERP 裡記錄的資料。ERP 的資料品質，決定了 AI 助理能給你的答案品質——資料沒更新，Codex 也看不到真實狀況。</p>
+<hr />
+<p><em>Taiwan Vibe Coding — C1 穩得實業 Session 3</em> <em>最後更新：2026-07-13（講師備忘見 <a href="exercise-solutions.html#s3-memo">講師備忘</a>）</em></p>
+
+</div>
+<script src="copy-blocks.js?v=5" defer></script>
+</body>
+</html>

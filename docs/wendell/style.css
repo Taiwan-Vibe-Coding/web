@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap');
+
+:root {
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --paper: #fafaf9;
+  --card: #ffffff;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --warn: #9a3412;
+  --code-bg: #f5f5f4;
+  --shadow: 0 1px 2px rgb(28 25 23 / 4%), 0 8px 24px rgb(28 25 23 / 6%);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 400px at 10% -10%, #ecfdf5 0%, transparent 55%),
+    radial-gradient(900px 360px at 100% 0%, #fff7ed 0%, transparent 50%),
+    var(--paper);
+  font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 28px 22px 80px;
+}
+
+nav.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  margin: 0 -22px 28px;
+  padding: 12px 22px;
+  background: rgb(250 250 249 / 92%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav.top a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+nav.top a:hover { text-decoration: underline; }
+nav.top .sep { color: #a8a29e; }
+
+header.doc-head {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+header.doc-head .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Source Serif 4", "Noto Serif TC", "Songti TC", serif;
+  line-height: 1.28;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+h1 {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  margin: 0 0 0.4em;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 2.2em 0 0.7em;
+  padding-top: 0.4em;
+  border-top: 1px solid var(--line);
+}
+
+h2:first-of-type { border-top: none; padding-top: 0; }
+
+h3 {
+  font-size: 1.12rem;
+  margin: 1.6em 0 0.55em;
+  color: #292524;
+}
+
+h4 {
+  font-size: 1.02rem;
+  margin: 1.3em 0 0.4em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+}
+
+p { margin: 0.7em 0; }
+
+a { color: var(--accent); }
+
+ul, ol {
+  margin: 0.6em 0 1em;
+  padding-left: 1.35em;
+}
+
+li { margin: 0.28em 0; }
+li > ul, li > ol { margin: 0.25em 0; }
+
+blockquote {
+  margin: 1.1em 0;
+  padding: 0.85em 1.1em;
+  border-left: 4px solid var(--accent);
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-radius: 0 10px 10px 0;
+  color: #292524;
+}
+
+blockquote p:first-child { margin-top: 0; }
+blockquote p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.1em 0 1.4em;
+  font-size: 0.94rem;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  background: #f5f5f4;
+  font-weight: 700;
+  color: #44403c;
+  white-space: nowrap;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #fcfcfb; }
+
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  background: var(--code-bg);
+  padding: 0.12em 0.4em;
+  border-radius: 5px;
+  color: #44403c;
+}
+
+pre {
+  background: #1c1917;
+  color: #f5f5f4;
+  padding: 14px 16px;
+  overflow: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+.copy-block {
+  position: relative;
+  margin: 1.1em 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  border: 1px solid rgb(255 255 255 / 18%);
+  background: rgb(41 37 36 / 88%);
+  color: #fafaf9;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.copy-btn:hover {
+  background: rgb(68 64 60 / 95%);
+}
+
+.copy-btn.copied {
+  background: #0f766e;
+  border-color: transparent;
+}
+
+.copy-block pre {
+  padding-right: 72px;
+}
+
+/* Answer blanks — editable dashed fields (see copy-blocks.js) */
+pre.worksheet {
+  background: #fafaf9;
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.worksheet-field {
+  margin: 1.1em 0;
+}
+
+.worksheet-field-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 0.35em;
+}
+
+.worksheet-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 7rem;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1.5px dashed #a8a29e;
+  border-radius: 12px;
+  background:
+    linear-gradient(#fff 0 0) padding-box,
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgb(231 229 228 / 70%) 27px,
+      rgb(231 229 228 / 70%) 28px
+    );
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  resize: vertical;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgb(28 25 23 / 4%);
+}
+
+.worksheet-input:focus {
+  border-color: var(--accent);
+  border-style: solid;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  background: #fff;
+}
+
+.worksheet-input::placeholder {
+  color: #a8a29e;
+}
+
+.worksheet-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 0.35em;
+}
+
+.worksheet-reset {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.worksheet-reset:hover {
+  color: var(--ink);
+  border-color: #a8a29e;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.1em 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+figure.shot {
+  margin: 1.2rem 0 1.8rem;
+}
+
+figure.shot img {
+  margin: 0;
+  max-width: 960px;
+  width: 100%;
+}
+
+figure.shot figcaption {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.2em 0;
+}
+
+strong { font-weight: 700; color: #1c1917; }
+
+/* task list polish */
+li input[type="checkbox"] {
+  margin-right: 0.4em;
+  transform: translateY(1px);
+}
+
+@media print {
+  body { background: #fff; font-size: 11.5pt; }
+  nav.top { display: none; }
+  .copy-btn { display: none !important; }
+  .copy-block pre { padding-right: 16px; }
+  .worksheet-field-label,
+  .worksheet-actions { display: none !important; }
+  .worksheet-input {
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: none;
+    resize: none;
+    overflow: hidden;
+  }
+  .wrap { max-width: none; padding: 0; }
+  table, block, blockquote, pre { box-shadow: none; }
+  h2 { break-after: avoid; }
+  img { break-inside: avoid; }
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 18px 16px 56px; }
+  nav.top { margin: 0 -16px 20px; padding: 10px 16px; }
+  table { font-size: 0.88rem; }
+  th, td { padding: 8px; }
+}
+
+header.doc-head .lede {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+pre.diagram {
+  background: #fafaf9;
+  border-style: solid;
+  border-color: var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}

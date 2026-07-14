@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>穩得四天課 · 八份教材</title>
+<link rel="stylesheet" href="style.css?v=4"/>
+<style>
+  .hero {
+    padding: 28px 0 8px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 0.35em;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 36em;
+  }
+  .day { margin-top: 2rem; }
+  .day h2 {
+    border: none;
+    margin: 0;
+    font-size: 1.45rem;
+  }
+  .day-sub {
+    margin: 0.2em 0 0.9em;
+    color: var(--muted);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  a.card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  a.card:hover {
+    transform: translateY(-2px);
+    border-color: #99f6e4;
+  }
+  a.card .k {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.92rem;
+  }
+  a.card .t {
+    color: #44403c;
+    font-size: 0.98rem;
+  }
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">穩得實業 · Taiwan Vibe Coding</div>
+    <h1>四天課 · 八份教材</h1>
+  </div>
+  <section class="day"><h2>Day 1</h2><p class="day-sub">Session 1 · 認識 AI Agent</p><div class="grid"><a class="card" href="session-01-lesson-plan.html"><span class="k">課程計畫</span><span class="t">介面、Memory、Plugins、RCFC</span></a><a class="card" href="session-01-exercises.html"><span class="k">練習題</span><span class="t">業務情境與延伸練習</span></a></div></section>
+<section class="day"><h2>Day 2</h2><p class="day-sub">Session 2 · ERP／人資助理</p><div class="grid"><a class="card" href="session-02-lesson-plan.html"><span class="k">課程計畫</span><span class="t">GCP MCP、預覽→確認</span></a><a class="card" href="session-02-exercises.html"><span class="k">練習題</span><span class="t">假單、薪資、安全鍵</span></a></div></section>
+<section class="day"><h2>Day 3</h2><p class="day-sub">Session 3 · 公司資料整合</p><div class="grid"><a class="card" href="session-03-lesson-plan.html"><span class="k">課程計畫</span><span class="t">廠商、採購、帳款</span></a><a class="card" href="session-03-exercises.html"><span class="k">練習題</span><span class="t">整合式提問與分析</span></a></div></section>
+<section class="day"><h2>Day 4</h2><p class="day-sub">Session 4 · AI 同事上線</p><div class="grid"><a class="card" href="session-04-lesson-plan.html"><span class="k">課程計畫</span><span class="t">System Prompt、凡事問AI</span></a><a class="card" href="session-04-exercises.html"><span class="k">練習題</span><span class="t">複合任務與結業手冊</span></a></div></section>
+<section class="day"><h2>講師</h2><div class="grid"><a class="card" href="exercise-solutions.html"><span class="k">講師備忘</span></a></div></section>
+
+</div>
+</body>
+</html>

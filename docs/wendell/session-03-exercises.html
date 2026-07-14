@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<title>Day 3 練習題 · 採購與財務的 AI 查詢助理</title>
+<link rel="stylesheet" href="style.css?v=5"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-03-lesson-plan.html">上一份</a>
+  <a href="session-04-lesson-plan.html">下一份</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 3 · Session 3 · 練習題</div>
+  <h1>採購與財務的 AI 查詢助理</h1>
+  <p class="lede">廠商／採購／帳款</p>
+</header>
+
+<blockquote>
+<p><strong>課程日期</strong>：2026-07-28（二）<br />
+<strong>工具</strong>：ChatGPT Work（Codex）+ 穩得 MCP 外掛（示範 ERP）<br />
+<strong>練習規則</strong>：</p>
+<ol>
+<li>先用自己的話問，不要照格式</li>
+<li>記下 Codex 查了哪些資料來源</li>
+<li>試著讓 Codex「串接」多個查詢</li>
+<li>討論問題請認真作答，沒有標準答案</li>
+<li><strong>今天全程唯讀</strong></li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="練習一查廠商30-分鐘">練習一：查廠商（30 分鐘）</h2>
+<h3 id="課堂說明">課堂說明</h3>
+<p>系統裡有幾家預設的示範廠商，都是 EMC 測試實驗室會用到的——儀器校正、測試配件、國際驗證機構。大家可以先問「有哪些廠商？」，再逐步深入。</p>
+<p><strong>練習核心：</strong> - 從全局查詢出發，逐步縮小範圍 - 嘗試「以條件篩選」（國別、付款條件） - 讓 Codex 把廠商資料整理成一個實用的格式</p>
+<h3 id="情境">情境</h3>
+<p>你是行政採購，主管突然問：「我們跟哪幾家廠商合作？有沒有德國或美國的？付款條件最長的是哪家？」</p>
+<p>你不想一個個翻 ERP，你想用 Codex 在 2 分鐘內回答主管。</p>
+<h3 id="step-1全局查詢10-分鐘">Step 1：全局查詢（10 分鐘）</h3>
+<p>先問出系統裡所有廠商：</p>
+<pre class="worksheet"><code>我的第一個問法：
+
+
+Codex 回傳了幾家廠商？列出名稱：</code></pre>
+<h3 id="step-2條件篩選10-分鐘">Step 2：條件篩選（10 分鐘）</h3>
+<p>試試以下幾個問法，看哪個最清楚：</p>
+<p><strong>問法 A：按國別篩選</strong></p>
+<pre class="copy-prompt"><code>有沒有台灣以外的廠商？是哪幾家？</code></pre>
+<p><strong>問法 B：按付款條件篩選</strong></p>
+<pre class="copy-prompt"><code>付款條件最長的廠商是哪家？付款條件是多少天？</code></pre>
+<p><strong>問法 C：要求整理格式</strong></p>
+<pre class="copy-prompt"><code>把所有廠商整理成一個表格，欄位包含：廠商名稱、國別、付款條件、聯絡人、電話。</code></pre>
+<pre class="worksheet"><code>你試了哪個問法？
+
+
+結果：</code></pre>
+<pre class="copy-prompt"><code>哪個格式最方便你直接傳給主管？</code></pre>
+<h3 id="step-3查特定廠商的細節15-分鐘">Step 3：查特定廠商的細節（15 分鐘）</h3>
+<p>從剛才的廠商列表裡，選一家你覺得最重要的，深入查詢：</p>
+<pre class="worksheet"><code>我選的廠商：</code></pre>
+<p>我的問法：</p>
+<pre class="worksheet"><code>Codex 回傳的資訊裡，有沒有你意外地沒想到要問的欄位？</code></pre>
+<p>接著試一個串接問題：</p>
+<pre class="copy-prompt"><code>[廠商名稱] 有幾張採購單？最近一張是什麼時候下的？</code></pre>
+<pre class="worksheet"><code>Codex 能回答這個問題嗎？它查了哪些資料？</code></pre>
+<h3 id="討論問題">討論問題</h3>
+<ol type="1">
+<li>如果廠商資料有一筆電話號碼是錯的，Codex 會提醒你嗎？</li>
+<li>誰負責確保 ERP 裡的廠商資料是準確的？</li>
+</ol>
+<pre class="worksheet"><code>1.
+
+
+2.
+
+
+3.
+
+
+4.
+</code></pre>
+<hr />
+<h2 id="練習二查採購單30-分鐘">練習二：查採購單（30 分鐘）</h2>
+<h3 id="課堂說明-1">課堂說明</h3>
+<p>系統採購單有一張是年度儀器校正服務，一張是 LISN 設備採購。這兩張單的狀態，可以讓大家練習「追蹤採購進度」。</p>
+<p><strong>討論問題（練習後）：</strong></p>
+<p>「如果採購單預計到貨日已經過了，但 ERP 的狀態還沒更新，Codex 能幫你發現這個問題嗎？」</p>
+<p>Codex 只能回傳 ERP 裡記錄的資料。<strong>如果資料沒有及時更新，Codex 也看不到真實狀況。</strong> ERP 的資料品質，決定了 AI 助理能給你的答案品質。</p>
+<h3 id="情境-1">情境</h3>
+<p>主管說：「上半年有沒有採購單預計到貨但還沒到的？」 你知道系統裡有幾張採購單，但一直沒有時間去確認進度。</p>
+<h3 id="step-1列出所有採購單10-分鐘">Step 1：列出所有採購單（10 分鐘）</h3>
+<pre class="worksheet"><code>我的問法：
+
+
+系統裡有幾張採購單？列出它們的：
+- 採購單號：
+- 廠商：
+- 品項：
+- 預計到貨：
+- 目前狀態：</code></pre>
+<h3 id="step-2追蹤進度15-分鐘">Step 2：追蹤進度（15 分鐘）</h3>
+<p>針對每一張採購單，試著問：</p>
+<p><strong>PO2026-001（頻譜分析儀校正服務）</strong></p>
+<pre class="copy-prompt"><code>PO2026-001 的狀態是什麼？預計到貨日期是？已經過期了嗎？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<pre class="copy-prompt"><code>你自己判斷：這張單的狀態正常嗎？</code></pre>
+<p><strong>PO2026-002（LISN 設備採購）</strong></p>
+<pre class="copy-prompt"><code>PO2026-002 呢？廠商是誰？聯絡人是？如果我要催貨，應該聯絡誰？</code></pre>
+<pre class="worksheet"><code>Codex 的回答（包含廠商聯絡資訊）：</code></pre>
+<h3 id="step-3把採購單和廠商串起來10-分鐘">Step 3：把採購單和廠商串起來（10 分鐘）</h3>
+<p>試試這個多步驟問法：</p>
+<pre class="copy-prompt"><code>幫我列出所有採購單，以及每張單對應的廠商名稱、付款條件和聯絡人，
+整理成一個表格方便我追蹤。</code></pre>
+<pre class="worksheet"><code>Codex 是否成功把採購單和廠商資料串在一起？</code></pre>
+<pre class="worksheet"><code>這個表格對你的工作有幫助嗎？為什麼？</code></pre>
+<h3 id="重要討論">重要討論</h3>
+<blockquote>
+<p>PO2026-001 的預計到貨日是 <strong>2026-04-30</strong>，課日若以 <strong>2026-07-28</strong> 來看，日期早已過了。<br />
+但實測這張單的狀態是 <strong><code>received</code>（已收貨）</strong>——所以「日期過了」≠「還在逾期未交」。</p>
+</blockquote>
+<blockquote>
+<p>Codex 有沒有同時告訴你「預計到貨日」和「目前狀態」？有沒有自己下結論說「逾期要催貨」？</p>
+</blockquote>
+<pre class="worksheet"><code>你的觀察：</code></pre>
+<p><strong>說明：</strong></p>
+<p>Codex 會回傳系統裡的資料（日期、狀態）。但「這張單還要不要催貨／要做什麼」這個<strong>判斷</strong>，需要由你做出——而且要看狀態，不能只看日期。</p>
+<p><strong>試試看：</strong></p>
+<pre class="copy-prompt"><code>PO2026-001 的預計到貨日是 2026-04-30，狀態是 received。
+相對今天（2026-07-28），這張單算「逾期未交」嗎？我接下來該做什麼？</code></pre>
+<pre class="worksheet"><code>Codex 的建議有幫助嗎？你會直接照做嗎？為什麼？</code></pre>
+<hr />
+<h2 id="練習三查應付帳款25-分鐘">練習三：查應付帳款（25 分鐘）</h2>
+<h3 id="課堂說明-2">課堂說明</h3>
+<p>這個練習會讓大家體驗「把廠商 + 採購單 + 應付帳款串起來問」的威力。</p>
+<p><strong>重點：</strong> 「你剛才讓 Codex 做的事，如果用原本的方式，大概要幾分鐘？」——算出如果每週做一次這樣的對帳，一年省下的時間是多少。</p>
+<h3 id="情境-2">情境</h3>
+<p>月底結帳前，財務需要確認：本月有哪些款項要付？總金額是多少？有沒有快到期的？</p>
+<h3 id="step-1全局查詢10-分鐘-1">Step 1：全局查詢（10 分鐘）</h3>
+<pre class="worksheet"><code>我的問法：
+
+
+系統裡有幾筆應付帳款？
+總未付金額：
+有沒有逾期的：</code></pre>
+<h3 id="step-2按狀態篩選10-分鐘">Step 2：按狀態篩選（10 分鐘）</h3>
+<p>試試以下問法：</p>
+<p><strong>問法 A：查未付款項</strong></p>
+<pre class="copy-prompt"><code>有哪些應付帳款還沒付清？金額各是多少？</code></pre>
+<p><strong>問法 B：按到期日排序</strong></p>
+<pre class="copy-prompt"><code>把應付帳款按到期日從早到晚排列，哪筆最快到期？</code></pre>
+<p><strong>問法 C：查特定廠商</strong></p>
+<pre class="copy-prompt"><code>SGS 台灣有沒有未付的發票？發票號是什麼？</code></pre>
+<pre class="worksheet"><code>你試了哪個問法：
+
+
+結果：</code></pre>
+<h3 id="step-3串接查詢15-分鐘">Step 3：串接查詢（15 分鐘）</h3>
+<p>這是今天最進階的練習——讓 Codex 一次回答一個需要查三個地方的問題：</p>
+<p>幫我做一個付款追蹤摘要：</p>
+<pre class="copy-prompt"><code>1. 列出所有未付的應付帳款（廠商、發票號、金額、到期日）
+2. 對應的採購單號和採購品項
+3. 廠商的付款條件和聯絡人
+4. 哪筆最緊急，建議優先處理
+
+格式用表格，繁體中文。</code></pre>
+<pre class="worksheet"><code>Codex 整合了哪幾個資料來源？</code></pre>
+<pre class="worksheet"><code>回傳的內容你覺得可以直接給主管看嗎？還是需要調整？</code></pre>
+<pre class="worksheet"><code>如果需要調整，你怎麼告訴 Codex？</code></pre>
+<h3 id="最後的大討論所有學員一起">最後的大討論（所有學員一起）</h3>
+<p><strong>問題一：</strong></p>
+<blockquote>
+<p>「剛才 Codex 說哪筆最緊急，建議優先處理。你會照它的建議做嗎？」</p>
+</blockquote>
+<pre class="worksheet"><code>你的答案：</code></pre>
+<p><strong>問題二：</strong></p>
+<blockquote>
+<p>「如果 Codex 計算的總金額和你自己算的不一樣，你怎麼辦？」</p>
+</blockquote>
+<pre class="worksheet"><code>你的答案：</code></pre>
+<p><strong>問題三：</strong></p>
+<blockquote>
+<p>「你今天用 Codex 做的這些查詢，原本要花多少時間？省了多少？」</p>
+</blockquote>
+<pre class="worksheet"><code>原本的時間：
+用 Codex 的時間：
+你覺得這個差距值得學習這個工具嗎？</code></pre>
+<hr />
+<h2 id="練習四查客戶與委託案o2c25-分鐘">練習四：查客戶與委託案（O2C）（25 分鐘）</h2>
+<h3 id="課堂說明-3">課堂說明</h3>
+<p>前面三個練習查的是「花錢」的一邊——廠商、採購、應付帳款。這個練習查「賺錢」的一邊——客戶、報價單、委託案、應收帳款。</p>
+<p><strong>練習核心：</strong></p>
+<ul>
+<li>從客戶清單出發，再查委託案進度</li>
+<li>試著把客戶／報價／委託／應收串成一問</li>
+<li>跟練習三的「應付」對照：一邊「我們欠別人」，一邊「別人欠我們」</li>
+</ul>
+<h3 id="情境-3">情境</h3>
+<p>業務同事最常問：客戶付了多少、委託案進度到哪了。你想用 Codex 一次整理清楚，不用開多個 ERP 畫面。</p>
+<h3 id="step-1查客戶5-分鐘">Step 1：查客戶（5 分鐘）</h3>
+<pre class="copy-prompt"><code>有哪些客戶？</code></pre>
+<pre class="worksheet"><code>我的問法：
+
+
+系統裡有幾個客戶？列出名稱：</code></pre>
+<h3 id="step-2查委託案進度12-分鐘">Step 2：查委託案進度（12 分鐘）</h3>
+<pre class="copy-prompt"><code>山田電機目前有哪些委託案？進度到哪了？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<p>再試一組對照——研華已完成、三星還在報價：</p>
+<pre class="copy-prompt"><code>研華目前的委託案完成了嗎？
+三星有沒有還在報價的案子？</code></pre>
+<p>試著把客戶、報價單、委託案、應收串起來：</p>
+<pre class="copy-prompt"><code>幫我整理台達的往來狀況：目前有哪些委託案、有沒有還在報價階段的、應收帳款還有沒有沒收的。</code></pre>
+<h3 id="step-3應收帳款8-分鐘">Step 3：應收帳款（8 分鐘）</h3>
+<pre class="copy-prompt"><code>目前有哪些應收帳款還沒收到款？有沒有逾期的？逾期金額是多少？發票號碼呢？</code></pre>
+<pre class="worksheet"><code>回傳結果：
+
+
+最有價值的資訊是：</code></pre>
+<h3 id="討論問題-1">討論問題</h3>
+<p>跟練習三的「應付」對照：一邊是「我們欠別人」，一邊是「別人欠我們」。</p>
+<pre class="worksheet"><code>Codex 查詢兩邊資料的邏輯，有沒有不一樣？</code></pre>
+<hr />
+<h2 id="延伸練習五發票明細選修10-分鐘">延伸練習五：發票明細（選修，10 分鐘）</h2>
+<blockquote>
+<p>練習三查的是「應付帳款」的總覽（每筆發票的金額、到期日）。這個延伸練習往下多看一層：一張發票裡面，每一行測項各收多少錢。</p>
+</blockquote>
+<h3 id="情境-4">情境</h3>
+<p>財務同事想確認一張銷售發票的明細有沒有算對，不想再打開 ERP 一行一行核對。</p>
+<h3 id="step-1查發票主檔5-分鐘">Step 1：查發票主檔（5 分鐘）</h3>
+<pre class="copy-prompt"><code>SINV-2026-041 這張發票的內容是什麼？金額多少？狀態是？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<h3 id="step-2查明細行5-分鐘">Step 2：查明細行（5 分鐘）</h3>
+<pre class="copy-prompt"><code>這張發票每一行的測項與金額是什麼？</code></pre>
+<pre class="worksheet"><code>Codex 回傳的明細：</code></pre>
+<h3 id="step-3查一下這張發票有沒有折讓單5-分鐘">Step 3：查一下這張發票有沒有折讓單（5 分鐘）</h3>
+<p>如果客戶事後反映測項算錯要求退款，財務會開一張「折讓單」（credit memo）調整這張發票——今天先學查詢，Session 4 會示範怎麼實際開一張。</p>
+<pre class="copy-prompt"><code>SINV-2026-041 這張發票有沒有相關的銷貨折讓單？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<blockquote>
+<p>今天示範資料可能還沒有折讓單可查（回傳空清單是正常的）——重點是知道「發票金額不一定是最終金額，折讓會再調整它」這個概念，實際操作留到 Session 4 延伸練習八（Track C：業務／財務）。</p>
+</blockquote>
+<h3 id="討論問題-2">討論問題</h3>
+<p>如果發票明細裡有一行的單價跟報價單不一致，這是 Codex 該判斷的事，還是人該判斷的事？</p>
+<pre class="worksheet"><code>我的想法：
+
+
+</code></pre>
+<hr />
+<h2 id="延伸練習六庫存查詢選修10-分鐘">延伸練習六：庫存查詢（選修，10 分鐘）</h2>
+<h3 id="情境-5">情境</h3>
+<p>練習二查了 PO2026-002（LISN 設備採購）的採購進度。設備買回來之後，實驗室想知道：現在庫存到底夠不夠用？</p>
+<h3 id="step-1查品項主檔5-分鐘">Step 1：查品項主檔（5 分鐘）</h3>
+<pre class="copy-prompt"><code>實驗室有哪些耗材與設備品項？</code></pre>
+<pre class="worksheet"><code>Codex 回傳的品項清單：</code></pre>
+<h3 id="step-2查庫存水位5-分鐘">Step 2：查庫存水位（5 分鐘）</h3>
+<pre class="copy-prompt"><code>哪些品項的庫存低於再訂購點？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<blockquote>
+<p>目前庫存量已經低於再訂購點，適合當作「該補貨了」的示範</p>
+</blockquote>
+<p>試著把庫存和採購單串起來問：</p>
+<pre class="copy-prompt"><code>PO2026-002 買的 LISN 到貨之後，現在庫存還有幾台？</code></pre>
+<hr />
+<h2 id="延伸練習七把查詢結果變成給主管的一頁分析優先選修20-分鐘">延伸練習七：把查詢結果變成「給主管的一頁分析」（優先選修，20 分鐘）</h2>
+<h3 id="情境-6">情境</h3>
+<p>財務主管不是只想知道「有哪些應付帳款」，他想知道的是：這些款項有沒有異常？哪家廠商佔比最高？有沒有需要留意的變化？</p>
+<h3 id="step-1資料清理式提問4-分鐘">Step 1：資料清理式提問（4 分鐘）</h3>
+<p>拿練習三查到的應付帳款清單，追問：</p>
+<pre class="copy-prompt"><code>剛才這份應付帳款清單裡，有沒有欄位是缺漏的、或者格式不一致的地方？
+例如有沒有金額是 0、到期日是空白、或者同一個廠商名稱打法不一樣？</code></pre>
+<h3 id="step-2從模糊問題進化到具體問題5-分鐘">Step 2：從模糊問題進化到具體問題（5 分鐘）</h3>
+<p><strong>先問模糊的：</strong></p>
+<pre class="copy-prompt"><code>幫我看看這些應付帳款有什麼問題。</code></pre>
+<p><strong>改成具體的分析問題：</strong></p>
+<pre class="copy-prompt"><code>這些應付帳款裡，哪一家廠商的未付金額佔比最高？佔整體的百分之多少？
+平均的付款天數（下單到到期日）是幾天？有沒有明顯偏長或偏短的？</code></pre>
+<pre class="worksheet"><code>你覺得哪一個問法讓 Codex 的回答更有用？差在哪裡？
+
+
+</code></pre>
+<h3 id="step-3圖表給主管的一頁報告6-分鐘">Step 3：圖表＋給主管的一頁報告（6 分鐘）</h3>
+<p>請根據剛才的分析，產出「給主管的一頁分析報告」：</p>
+<pre class="copy-prompt"><code>- 3 個發現（各一句）
+- 1 個建議（需人工決策的標成「待主管決定」）
+- 一張「各廠商未付金額佔比」圖表（可放在簡報或 Excel）
+繁體中文。</code></pre>
+<h3 id="step-4帶走-excel5-分鐘">Step 4：帶走 Excel（5 分鐘）</h3>
+<p>請把這份應付帳款分析整理成一份 Excel：</p>
+<pre class="copy-prompt"><code>第一個分頁放原始清單，第二個分頁放「各廠商未付金額佔比」的小計表，
+第三個分頁放一頁報告的文字摘要。</code></pre>
+<p>觀察：Codex 產出的是實際檔案（側欄可預覽）；互動網頁儀表板留到 Session 4 Track A 進階步驟。</p>
+<h3 id="討論問題-3">討論問題</h3>
+<blockquote>
+<p>跟前面「查一筆答案」比起來，這種「清理 → 好問題 → 一頁報告」對財務／採購主管哪個情境用得到？</p>
+</blockquote>
+<pre class="worksheet"><code>我的想法：
+
+
+</code></pre>
+<hr />
+<h2 id="延伸練習八專案與合約選修15-分鐘">延伸練習八：專案與合約（選修，15 分鐘）</h2>
+<h3 id="情境一查專案任務與成本8-分鐘">情境一：查專案任務與成本（8 分鐘）</h3>
+<p>實驗室主管想知道一個委託測試專案目前花了多少成本、還有哪些任務沒完成。</p>
+<pre class="copy-prompt"><code>PRJ-EMI-2026-001 這個專案的狀態、預算和目前花費是多少？
+
+這個專案還有哪些任務？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<h3 id="情境二查合約履約進度7-分鐘">情境二：查合約履約進度（7 分鐘）</h3>
+<p>業務想知道一份年度合約簽了多久、還剩多少額度沒用完。</p>
+<pre class="copy-prompt"><code>研華的年度合約 SC-2026-001 履約進度到哪了？</code></pre>
+<pre class="worksheet"><code>Codex 的回答：</code></pre>
+<h3 id="討論問題-4">討論問題</h3>
+<p>這兩個查詢跟前面練習一到四查的廠商/採購單/客戶資料，有什麼不一樣？</p>
+<pre class="worksheet"><code>我的想法：
+
+
+</code></pre>
+<hr />
+<h2 id="附錄今天用到的工具">附錄：今天用到的工具</h2>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>工具</th>
+<th>功能</th>
+<th>適合問的問題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_vendors</code></td>
+<td>查廠商主檔</td>
+<td>「有哪些廠商？付款條件是？」</td>
+</tr>
+<tr>
+<td><code>list_purchase_orders</code></td>
+<td>查採購單</td>
+<td>「PO 狀態？預計到貨日？」</td>
+</tr>
+<tr>
+<td><code>list_ap_balances</code></td>
+<td>查應付帳款</td>
+<td>「有哪些款項未付？」</td>
+</tr>
+<tr>
+<td><code>list_ar_balances</code></td>
+<td>查應收帳款</td>
+<td>「有哪些客戶未付款？」</td>
+</tr>
+<tr>
+<td><code>list_customers</code></td>
+<td>查客戶主檔</td>
+<td>「有哪些客戶？」</td>
+</tr>
+<tr>
+<td><code>list_orders</code></td>
+<td>查委託案／訂單</td>
+<td>「這個客戶有哪些委託案？」</td>
+</tr>
+<tr>
+<td><code>list_quotations</code></td>
+<td>查報價單</td>
+<td>「有哪些報價單還在草稿階段？」</td>
+</tr>
+<tr>
+<td><code>get_sales_invoice</code> / <code>list_sales_invoice_lines</code></td>
+<td>銷售發票明細行</td>
+<td>「SINV-2026-041 每一行測項多少錢？」</td>
+</tr>
+<tr>
+<td><code>list_items</code> / <code>list_stock_levels</code></td>
+<td>品項與庫存水位</td>
+<td>「哪些品項低於再訂購點？」</td>
+</tr>
+<tr>
+<td><code>list_purchase_invoices</code> / <code>get_purchase_invoice</code></td>
+<td>採購發票</td>
+<td>「<code>AP-2026-045</code> 這張採購發票的內容是什麼？」（demo：對應 PO2026-002）</td>
+</tr>
+<tr>
+<td><code>list_sales_credit_memos</code> / <code>get_sales_credit_memo</code></td>
+<td>銷貨折讓單查詢</td>
+<td>「<code>SINV-2026-041</code> 有沒有相關的銷貨折讓單？」</td>
+</tr>
+<tr>
+<td><code>list_projects</code> / <code>get_project</code> / <code>list_project_tasks</code></td>
+<td>委託案專案</td>
+<td>「PRJ-EMI-2026-001 這個專案的任務和成本是什麼？」</td>
+</tr>
+<tr>
+<td><code>list_sales_contracts</code></td>
+<td>銷售合約</td>
+<td>「研華的年度合約履約進度到哪了？」</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>這些工具查的都是<strong>公司共用資料</strong>，有授權的同事都能查到相同的結果。 與 Session 2 的個人資料（假單、薪資）不同。</p>
+</blockquote>
+<hr />
+<h2 id="課後作業必做session-4-開場分享">課後作業（必做，Session 4 開場分享）</h2>
+<p>把 Session 2 作業裡你寫的問法，改寫成「整合式提問」——原本分開問的幾件事，合併成一句話。</p>
+<pre class="worksheet"><code>Session 2 原本的問法：
+
+
+整合式提問改寫後：
+
+
+你覺得省下最多時間的地方是：</code></pre>
+
+
+</div>
+<script src="copy-blocks.js?v=5" defer></script>
+</body>
+</html>

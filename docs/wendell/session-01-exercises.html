@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<title>Day 1 練習題 · 在 Codex 完成 EMC 業務任務</title>
+<link rel="stylesheet" href="style.css?v=5"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-01-lesson-plan.html">上一份</a>
+  <a href="session-02-lesson-plan.html">下一份</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 1 · Session 1 · 練習題</div>
+  <h1>在 Codex 完成 EMC 業務任務</h1>
+  <p class="lede">課堂與延伸練習</p>
+</header>
+<blockquote>
+<p><strong>課程日期</strong>：2026-07-21（一）14:25–15:20<br />
+<strong>工具</strong>：Codex 桌面 app（在「穩得業務工具」Project 裡操作）<br />
+<strong>練習規則</strong>：</p>
+<ol>
+<li>先自己寫任務描述，送出看結果</li>
+<li>評估輸出：哪裡好？哪裡不夠？</li>
+<li>修改，再試一次</li>
+<li>記錄改了什麼、差在哪</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="練習一整理客戶詢價資訊15-分鐘">練習一：整理客戶詢價資訊（15 分鐘）</h2>
+<h3 id="情境">情境</h3>
+<p>業務剛接到一通電話，客戶說他們有一款產品要做 EMC 測試，但說得很零碎。你需要 Codex 幫你整理出「我們需要收集哪些資訊才能報價」，然後生成一份可以直接傳給業務新人的詢價 Checklist。</p>
+<h3 id="你的任務">你的任務</h3>
+<p>在「穩得業務工具」Project 開新對話，輸入你的任務描述。</p>
+<p><strong>先自己試（不要看下面）：</strong></p>
+<pre class="worksheet"><code>我的任務描述：
+
+
+Codex 的輸出品質：□ 很好  □ 還可以  □ 不夠好
+覺得哪裡可以改：</code></pre>
+<p><strong>改寫後再試（參考方向）：</strong></p>
+<p>試著在任務描述中加入：</p>
+<ul>
+<li>穩得是做什麼的（EMC 測試實驗室）</li>
+<li>詢價對象通常是什麼類型的客戶（電子廠的 PM）</li>
+<li>你要的格式（可以直接傳給業務新人的 Checklist）</li>
+<li>語言（繁體中文）</li>
+</ul>
+<p><strong>參考任務描述（先自己試，再看這個）：</strong></p>
+<pre class="copy-prompt"><code>你是穩得實業的資深業務工程師，公司提供 EMC/RF 認證測試服務，
+主要客戶是台灣、日本、韓國的電子產品製造商。
+
+請幫我製作一份「新客戶詢價資訊收集 Checklist」，
+目的是給業務新人用，確保他們接到詢價電話時不漏問關鍵問題。
+
+格式要求：
+- 分類呈現（產品基本資訊 / 認證需求 / 時程與樣品 / 特殊需求）
+- 每個分類下 3-5 個問題
+- 旁邊留空白讓業務可以填寫答案
+- 繁體中文</code></pre>
+<h3 id="討論問題">討論問題</h3>
+<p>兩個版本的輸出有什麼差別？哪個要素改變影響最大？</p>
+<pre class="worksheet"><code>我的想法：
+
+
+</code></pre>
+<hr />
+<h2 id="練習二寫測試不合格通知信20-分鐘">練習二：寫測試不合格通知信（20 分鐘）</h2>
+<h3 id="情境-1">情境</h3>
+<p>你的實驗室完成了一批測試，有兩個項目 fail。你要發信告知客戶，但客戶的窗口是非技術背景的 PM，看不懂測試報告。你需要一封讓 PM 看得懂的中文說明信。</p>
+<p>測試結果如下：</p>
+<pre class="copy-prompt"><code>測試項目一：輻射干擾（Radiated Emission）
+標準：CISPR 32, Class B
+量測值：312 MHz 時為 48.2 dBμV/m
+限值：40 dBμV/m
+超出：8.2 dB  → FAIL
+
+測試項目二：靜電放電免疫（ESD Immunity）
+標準：IEC 61000-4-2
+接觸放電 ±4kV：系統正常運作 → PASS
+空氣放電 ±8kV：系統重開機 → FAIL（需符合 Criteria A，不得中斷）
+
+測試項目三：傳導干擾（Conducted Emission）
+所有頻率：PASS</code></pre>
+<h3 id="step-1先問-codex-翻譯這份結果5-分鐘">Step 1：先問 Codex 翻譯這份結果（5 分鐘）</h3>
+<p>任務：把上面的技術數據翻譯成「非工程師也看得懂」的白話中文說明。</p>
+<pre class="worksheet"><code>我的任務描述：
+
+
+輸出品質：□ 很好  □ 還可以  □ 不夠好</code></pre>
+<h3 id="step-2讓-codex-寫通知信15-分鐘">Step 2：讓 Codex 寫通知信（15 分鐘）</h3>
+<p>把 Step 1 的輸出當作背景，繼續在同一個對話裡輸入：</p>
+<pre class="worksheet"><code>我的任務描述：
+
+
+輸出品質：□ 很好  □ 還可以  □ 不夠好
+改了什麼：</code></pre>
+<p><strong>提示（先自己試再看）：</strong></p>
+<p>試著指定：</p>
+<ul>
+<li>收件人是客戶 PM（非技術背景）</li>
+<li>信的語氣（專業但不冷漠）</li>
+<li>信的結構（先說結論，再說細節，最後說後續步驟）</li>
+<li>不需要給解決方案，但要說明「大概方向是什麼」</li>
+</ul>
+<h3 id="step-3同一對話裡再問一個問題選做">Step 3：同一對話裡再問一個問題（選做）</h3>
+<pre class="copy-prompt"><code>請幫我把這封信翻譯成英文，格式和中文版一致。</code></pre>
+<p>觀察：Codex 在同一個對話裡記不記得前面的內容？</p>
+<hr />
+<h2 id="練習三處理日文客戶來信20-分鐘">練習三：處理日文客戶來信（20 分鐘）</h2>
+<h3 id="情境-2">情境</h3>
+<p>穩得在韓國、日本都有業務。業務收到以下日文客戶來信，需要在 30 分鐘內回覆，但沒有人精通日文。</p>
+<pre class="copy-prompt"><code>件名：EMC試験の進捗について
+
+穏得実業のご担当者様
+
+お世話になっております。山田電機の田中と申します。
+
+先日お預けした無線LANルーター（型番：WR-2400G）の
+試験の進捗状況を確認させていただきたく、ご連絡いたしました。
+
+特に以下の点についてご確認をお願いできますでしょうか：
+
+1. 現在の試験進捗（完了した試験項目）
+2. 予定通り来月15日に報告書を受け取ることができるか
+3. 追加費用が発生する可能性があるか
+
+お忙しいところ恐れ入りますが、今週中にご回答いただけますと幸いです。
+
+田中 誠
+山田電機株式会社</code></pre>
+<h3 id="step-1翻譯並摘要5-分鐘">Step 1：翻譯並摘要（5 分鐘）</h3>
+<p>任務描述提示：</p>
+<ul>
+<li>請 Codex 翻譯這封信</li>
+<li>列出客戶問的三個問題</li>
+<li>用條列方式，繁體中文</li>
+</ul>
+<pre class="worksheet"><code>我的任務描述：
+
+
+翻譯品質滿意嗎？</code></pre>
+<h3 id="step-2起草日文回信15-分鐘">Step 2：起草日文回信（15 分鐘）</h3>
+<p>假設目前的情況：</p>
+<ul>
+<li>輻射干擾測試已完成（PASS）</li>
+<li>靜電放電測試進行中，預計下週完成</li>
+<li>交期可如期（來月15日沒問題）</li>
+<li>目前沒有額外費用</li>
+</ul>
+<p>請 Codex 起草一封日文回信。</p>
+<pre class="worksheet"><code>我的任務描述：
+
+
+輸出品質：□ 很好  □ 還可以  □ 不夠好</code></pre>
+<h3 id="step-3重要討論不要跳過">Step 3：重要討論（不要跳過）</h3>
+<blockquote>
+<p>如果你不懂日文，你怎麼知道 Codex 的日文回信寫得正確、禮貌？</p>
+</blockquote>
+<p>這個問題沒有標準答案，但它點出了 AI 公民開發的核心挑戰：</p>
+<p><strong>AI 的輸出，一定要有人負責驗核。</strong></p>
+<ul>
+<li>文字類任務：找懂這個語言的人過目</li>
+<li>數字類任務：一定要人工核算</li>
+<li>法規類任務：確認後再用（AI 可能引用舊版標準）</li>
+</ul>
+<p>這就是為什麼 <strong>MIS 的 Review 步驟不能省</strong>。</p>
+<hr />
+<h2 id="延伸練習四文件比對網路查證與檔案預覽優先選修作業必做其一20-分鐘">延伸練習四：文件比對、網路查證與檔案預覽（優先選修／作業必做其一，20 分鐘）</h2>
+<blockquote>
+<p><strong>目的</strong>：補上「文件分析」「來源查證」「產出先預覽再採用」。課堂來不及做完，<strong>回家必做完 Step 1–3</strong>。</p>
+</blockquote>
+<h3 id="情境-3">情境</h3>
+<p>業務工程師常常要處理兩類文件工作：</p>
+<ol>
+<li>客戶給的規格書跟自己手上的測試能力清單，兩份文件有沒有對不上的地方</li>
+<li>法規標準常常改版（例如加拿大 ICES-003 就出過多個 Issue），要確認手上用的是不是最新版</li>
+</ol>
+<h3 id="step-1上傳文件做摘要6-分鐘">Step 1：上傳文件做摘要（6 分鐘）</h3>
+<p>在 Codex 對話裡上傳一份文件（左下角 ＋，可以用手邊真實的產品規格書、認證標準節錄，或講師提供的範例 PDF）。沒有手邊文件時，可下載加拿大 ISED <strong>免費公開</strong>的 ICES-003 Issue 7 PDF：<br />
+<a href="https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/ICES-003-i7-2020-10EN.pdf">https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/ICES-003-i7-2020-10EN.pdf</a></p>
+<p>我的任務描述：</p>
+<pre class="copy-prompt"><code>請幫我摘要這份文件的重點，用條列列出：
+1. 這份文件是什麼性質（規格書／標準／報告）
+2. 跟 EMC 測試最相關的 3 個重點
+3. 有沒有看起來需要人工確認的模糊之處</code></pre>
+<pre class="worksheet"><code>輸出品質：□ 很好  □ 還可以  □ 不夠好</code></pre>
+<h3 id="step-2兩份文件交叉比對6-分鐘">Step 2：兩份文件交叉比對（6 分鐘）</h3>
+<p>再上傳第二份文件（例如另一版本的規格，或客戶的詢價需求 vs 公司報價單範本），任務描述：</p>
+<pre class="copy-prompt"><code>我上傳了兩份文件。請幫我比對：
+1. 兩份文件在哪些項目上不一致
+2. 哪些差異可能影響報價或測試範圍
+用表格列出，欄位：項目、文件一內容、文件二內容、需不需要跟客戶確認</code></pre>
+<h3 id="step-3網路查證要求附來源4-分鐘">Step 3：網路查證，要求附來源（4 分鐘）</h3>
+<pre class="copy-prompt"><code>請上網查一下加拿大 ICES-003（Information Technology Equipment）目前最新生效的是哪一版（Issue），
+什麼時候生效，並附上你查到的資料來源網址。</code></pre>
+<p>觀察重點：Codex 有沒有主動附上來源連結？如果沒有，追問「你這個資訊的來源是什麼？」<br />
+對照用（官方免費 PDF）：<a href="https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/ICES-003-i7-2020-10EN.pdf">https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/ICES-003-i7-2020-10EN.pdf</a></p>
+<h3 id="step-4檔案預覽側欄4-分鐘">Step 4：檔案預覽側欄（4 分鐘）</h3>
+<p>請 Codex 把 Step 1 的摘要「輸出成一頁簡報或 PDF」，在側欄先預覽再決定要不要下載採用。</p>
+<pre class="copy-prompt"><code>請把剛才的摘要做成一頁簡報（或 PDF），標題「詢價文件重點」，給業務內部會議用。
+先讓我在預覽區看過，我確認後再下載。</code></pre>
+<h3 id="討論重點不要跳過">討論重點（不要跳過）</h3>
+<blockquote>
+<p>Codex 的訓練資料有截止日期，法規標準卻一直在改版。如果它沒有上網查、只憑訓練資料回答，你怎麼知道它講的是不是舊版標準？</p>
+</blockquote>
+<p>這是這四堂課會反覆出現的主題（Session 2 的「預覽→確認」也是同一種精神）：<strong>AI 給的資訊方便，但涉及法規、金額這類會影響決策的內容，一定要有查證/人工確認的習慣</strong>。</p>
+<hr />
+<h2 id="延伸練習五一魚多吃內容改寫選修作業可選15-分鐘">延伸練習五：「一魚多吃」內容改寫（選修／作業可選，15 分鐘）</h2>
+<blockquote>
+<p>練習二已經寫過不合格通知信；這裡練「同一素材、多通路」。</p>
+</blockquote>
+<h3 id="素材">素材</h3>
+<p>用練習二產出的不合格通知信（或自己部門一則真實但已去識別的通知）。</p>
+<h3 id="step-1語氣兩版5-分鐘">Step 1：語氣兩版（5 分鐘）</h3>
+<pre class="copy-prompt"><code>同一件事，請給我兩個版本的客戶信件：
+A. 語氣強硬（明確重測時程與費用責任）
+B. 語氣委婉（保留關係、但時程不模糊）
+各不超過 200 字，繁體中文。</code></pre>
+<p>可再貼一段你以前寫過的信當 few-shot：「請模仿下面這封信的語氣」。</p>
+<h3 id="step-2改寫成四通路7-分鐘">Step 2：改寫成四通路（7 分鐘）</h3>
+<pre class="copy-prompt"><code>把下面這封通知的重點，改寫成四個版本（不要洩漏客戶機密細節）：
+1. 內部 Slack／Teams 短訊（給實驗室同事）
+2. Facebook／社團公告風（對外教育向，不點名客戶）
+3. LinkedIn 專業貼文（談「測試不合格常見原因」）
+4. 電子報小節（標題＋三段＋CTA「預約複測諮詢」）</code></pre>
+<h3 id="step-3短影音腳本3-分鐘可選">Step 3：短影音腳本（3 分鐘，可選）</h3>
+<pre class="copy-prompt"><code>用同一主題寫 45 秒短影音腳本：畫面提示＋旁白，三段結構。</code></pre>
+<h3 id="討論">討論</h3>
+<p>哪一個版本你敢直接發？哪一個還要人工改？這跟「適合交給 Agent」的界線有沒有呼應？</p>
+<pre class="worksheet"><code>我的想法：
+
+
+</code></pre>
+<hr />
+<h2 id="練習結束後的反思問題">練習結束後的反思問題</h2>
+<ol type="1">
+<li>哪一個練習，Codex 的輸出讓你最驚喜？</li>
+<li>哪一個你最不放心直接用？為什麼？</li>
+<li>如果明天就要在工作中用 Codex，你最想試的第一件事是什麼？</li>
+<li>你覺得哪些工作「絕對不能」讓 AI 做決定？</li>
+</ol>
+<pre class="worksheet"><code>1.
+
+
+2.
+
+
+3.
+
+
+4.
+</code></pre>
+<hr />
+<h2 id="課後作業必做session-2-開場分享">課後作業（必做，Session 2 開場分享）</h2>
+<p><strong>A. RCFC 真工作</strong></p>
+<pre class="worksheet"><code>原本想直接問的一句話：
+
+
+加上 RCFC 之後的完整任務描述：
+
+
+
+兩次輸出差在哪裡（一句話）：</code></pre>
+<p><strong>B. 擇一完成</strong>：延伸練習四（文件／研究）或延伸練習五（一魚多吃），帶截圖或檔案。</p>
+
+</div>
+<script src="copy-blocks.js?v=5" defer></script>
+</body>
+</html>

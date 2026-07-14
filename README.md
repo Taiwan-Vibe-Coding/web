@@ -13,7 +13,14 @@
 ./scripts/sync_appsource_docs.sh
 ```
 
-腳本會將 `docs-site/`（含截圖與 Pages workflow）推送到 `docs`。重拍 Partner Center 截圖後執行本腳本即可同步至公開手冊。
+腳本會將 `docs-site/`（含截圖與 Pages workflow）推送到 `docs`，並把穩得課堂靜態教材推到 `docs/wendell/`（**不**掛上 AppSource 首頁連結）。重拍 Partner Center 截圖後執行本腳本即可同步至公開手冊。
+
+| 路徑 | 網址 |
+|------|------|
+| AppSource 文件 | https://taiwan-vibe-coding.github.io/web/ |
+| 穩得四天課 HTML | https://taiwan-vibe-coding.github.io/web/wendell/ |
+
+教材來源：`projects/wendell/docs/curriculum-site/`（含 Bearer 的 `_print/` 列印檔不會同步）。
 
 ## 截圖
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<title>講師備忘 · 穩得 AI 課程</title>
+<link rel="stylesheet" href="style.css?v=8"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-04-exercises.html">上一份</a>
+  <a href="index.html">下一份</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">講師用 · 實測與課堂備註</div>
+  <h1>講師備忘</h1>
+  <p class="lede">Session 1–4 課前備註與實測對照</p>
+</header>
+
+<blockquote>
+<p><strong>實測日</strong>：2026-07-12<br />
+<strong>身分</strong>：示範員工 <code>WDL-E001</code>–<code>E050</code>（實測多用座位 1＝王志明）<br />
+<strong>教室 UI</strong>：ChatGPT Work + 雲端 MCP <code>wendell-dataverse-cloud</code><br />
+<strong>對象</strong>：講師（學員手冊仍以各 Session 練習原文為準）</p>
+</blockquote>
+
+<hr />
+<h2 id="session-1">Session 1｜認識 Codex（介面）</h2>
+<h3 id="s1-memo">講師備忘</h3>
+<ul>
+<li>確認每位學員都已安裝 <strong>ChatGPT Work</strong>（Codex）且帳號為 <strong>Plus</strong>（rate limit 問題）</li>
+<li>帶 HDMI 轉接頭；開場先說明左上角是 ChatGPT Work、教案仍稱 Codex 能力</li>
+<li>若有人安裝失敗，可先跟旁邊的人共用螢幕觀摩，下課後再處理</li>
+<li>練習時間是彈性的；時間緊時練習三可縮到 10 分鐘，但 <strong>延伸練習四必須進作業</strong>（文件分析缺口）</li>
+<li>重點是讓學員「親手體驗改寫任務描述後的差異」，這個 aha moment 比講完所有內容更重要</li>
+<li>課後作業含 RCFC＋文件／內容擇一，是 Session 2 開場分享材料</li>
+</ul>
+<h3 id="s1-check">實測對照</h3>
+<p><strong>預期成果（練習一～三）</strong>：詢價整理表、不合格通知信、日文來回信草稿；標出需人工確認處。</p>
+
+<hr />
+<h2 id="session-2">Session 2｜ERP／人資助理（MCP）</h2>
+<p><strong>教室＝連 GCP，沒有本機伺服器。</strong> 列印檔（含 Bearer）：<code>docs/_print/student-mcp-setup-card-PRINT.html</code>（已 gitignore）。</p>
+<h3 id="s2-memo">講師備忘</h3>
+<ul>
+<li>練習帳號：每人設定卡示範員工（<code>WDL-E001</code>–<code>E050</code>）——Bearer 綁定身分，<code>get_my_payslips</code>／請假／加班是<strong>該座位</strong>的資料</li>
+<li>權限邊界：<code>list_employees</code> 可查同事名單，但 <code>get_my_payslips</code> <strong>不能指定別人的員編</strong>——只讀設定卡綁定的本人。學員若問「幫我查某某同事的薪資」，預期查不到別人的；順便講：自助工具＝本人，不是人資後台</li>
+<li>人資身分<strong>不是</strong>另開 Portal 登入。若 Not authenticated，先檢查設定卡是否用 Streamable HTTP 連對課堂 URL／Bearer（不要改設 STDIO／本機）</li>
+<li><code>submit_leave</code> 送出後是真的寫進 <code>wendell-dataverse</code> 這個 Dataverse demo 環境（不是正航／鼎新正式系統），所以看得到「已送出」的結果；跟學員說清楚的是「這是示範環境，不是公司正式紀錄」，不是「這是假動作、沒有真的執行」</li>
+<li><strong>薪資單來源</strong>：課堂查到的 <code>get_my_payslips</code> 多半是 seed 示範資料。若後端已接 <strong>Payroll Engine</strong>（<code>run_payroll</code>／<code>POST /v1/hr/payroll-runs</code>），講師可另示範「試算 → 寫回 <code>tw_payslips</code>」——那才是合規算法路徑；不要把手動填的 demo 數字說成「系統依法規算出來的」</li>
+<li>如果 ERP／MCP 連線中斷：先確認 GCP（設定卡 URL、Bearer、場地外網）；再改口頭示範（照 <a href="session-02-exercises.html">session-02-exercises</a> 預期回應）。<strong>教室不切本機 <code>127.0.0.1:8020</code></strong>——那不是穩得上課路徑</li>
+</ul>
+<h3 id="s2-check">實測對照</h3>
+<p>問法：<code>請用 platform_health 查系統健康狀態…</code>。同對話再查薪資。</p>
+<blockquote>
+<p>可見：<code>系統健康狀態正常，所有服務皆為 ok。</code><br />
+薪資：三張——PAY-2026-06（6 月）／PAY-2026-05／PAY-2026-04；6 月實發 NT$52,646.00（單號勿含 <code>/</code>，否則 get_my_payslip 會 404）</p>
+</blockquote>
+<table>
+<thead>
+<tr><th>問法</th><th>預期</th></tr>
+</thead>
+<tbody>
+<tr><td>我的請假紀錄？</td><td>可能空清單或歷史；亦可查 absences</td></tr>
+<tr><td>年假還剩幾天？</td><td><strong>邊界</strong>：無配額 API → 應說明查不到剩餘天數</td></tr>
+</tbody>
+</table>
+
+<hr />
+<h2 id="session-3">Session 3｜公司資料整合（採購／O2C）</h2>
+<h3 id="s3-memo">講師備忘</h3>
+<p><strong>課前必做：</strong></p>
+<ul>
+<li>跑一次 <code>platform_health</code> + <code>list_customers</code>；失敗才改口頭帶過</li>
+<li>確認 <code>PO2026-001</code> 狀態為 <code>received</code> 或 <code>invoiced</code></li>
+<li>確認 AR／AP 查詢可用（練習三、四會用到）；失敗才準備替代說明</li>
+<li>延伸八 demo 能查到即可：<code>list_projects</code>（<code>PRJ-EMI-2026-001</code>）、<code>list_sales_contracts</code>（<code>SC-2026-001</code>）</li>
+</ul>
+<p><strong>示範帳號：</strong>今天查公司資料，不需特定員編（廠商／AP／客戶為共用示範資料）</p>
+<p><strong>若 ERP／MCP 連線中斷：</strong>改口頭示範，對照 exercises 預期結果帶過問法；教室不切本機</p>
+<p><strong>時間彈性：</strong></p>
+<ul>
+<li>練習一若進展快，可提前進練習二</li>
+<li>練習時段可穿插短休息，但 <strong>15:40 必須收進討論與課後作業指派</strong></li>
+<li>練習四若時間不夠，優先保留「有哪些客戶？」+ 一個委託案查詢</li>
+<li>選修延伸五～八（<strong>優先七：一頁分析</strong>）不能擠壓 15:40；時間到無論做到哪都收尾</li>
+</ul>
+<h3 id="s3-check">實測對照</h3>
+<ul>
+<li><strong>PO2026-001</strong>：狀態 <code>received</code>、預計到貨 <code>2026-04-30</code>、廠商全誠校正、金額 40,000 TWD。日期已過但已收貨 → 不是「逾期未交催貨」。</li>
+<li>雲端 MCP 廠商清單若夾到測試前綴資料，以示範錨點為準（如 <code>PO2026-001</code>／<code>V003</code>）。</li>
+</ul>
+
+<hr />
+<h2 id="session-4">Session 4｜AI 同事上線（複合查詢與寫入）</h2>
+<h3 id="s4-memo">講師備忘</h3>
+<p><strong>課前準備：</strong></p>
+<ul>
+<li>印出練習三「凡事問AI」作答區與結業「部門 AI 工作手冊」空白頁，每人／每組一張（直接印 <code>session-04-exercises</code> 對應段即可）</li>
+<li>確認 AR 可用（練習一複合查詢可能用到）；失敗才準備替代說明</li>
+<li>準備一段「講師版 System Prompt」課堂對比用</li>
+<li>課前跑 <code>platform_health</code>；試建客戶＋報價各一次（皆 <code>confirm=false</code>、名稱加臨時前綴、不送出），確認寫入預覽可用</li>
+<li>開場再口頭強調姓名前綴：今天新建的客戶／廠商／單據名稱都要加自己的英文縮寫（例如 <code>YL_測試客戶</code>）</li>
+</ul>
+<p><strong>分組建議：</strong></p>
+<ul>
+<li>少於 6 人：練習三、結業實作改個人完成後全班分享</li>
+<li>超過 10 人：練習三可兩人一組，發表時間壓到每組約 30 秒</li>
+</ul>
+<p><strong>時間彈性：</strong></p>
+<ul>
+<li>練習一時段可微調，但不要排擠練習四寫入體驗</li>
+<li><strong>15:40 結業手冊＋發表不可省略</strong>；選修 Track 不得往後擠</li>
+<li>選修 Track：<strong>A</strong>（全員）優先；<strong>B／C</strong> 依部門二選一；<strong>D</strong>（財務速覽）時間緊最先跳過。會議／Computer Use／CLI 見課程計畫文末補充教材，不佔 Track</li>
+</ul>
+<h3 id="s4-check">實測對照</h3>
+<ul>
+<li>練習四／延伸八：報價、訂單預覽需帶 <strong><code>product_name</code></strong></li>
+<li>延伸練習七：採購單預覽需帶 <strong><code>name</code></strong>（與廠商 ID）</li>
+</ul>
+
+<hr />
+<p><em>Taiwan Vibe Coding — C1 穩得實業 · 講師備忘</em>
+<em>最後更新：2026-07-14（移除截圖與已修正歷史說明）</em></p>
+
+</div>
+<script src="copy-blocks.js?v=9" defer></script>
+</body>
+</html>
