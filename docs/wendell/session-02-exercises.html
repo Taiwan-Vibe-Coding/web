@@ -92,6 +92,7 @@ Codex 做了什麼（查了哪個工具？）：
 <h3 id="課堂說明-1">課堂說明</h3>
 <p>薪資是個人隱私。這個功能上線後，你只能查自己的薪資，主管無法透過 AI 查下屬的薪資。今天的示範帳號是一位假設的員工。</p>
 <p><strong>示範環境薪資單有 <code>PAY-2026-04</code>／<code>05</code>／<code>06</code>（4／5／6 月）。</strong> 課堂上先問「我有哪些薪資單」，再指定月份；7 月上課「上個月」＝6 月可用。</p>
+<p><strong>工具說明（與 Codex／ChatGPT Work 實際行為對齊）：</strong> 課前驗收與課堂主路徑用 <code>get_my_payslips</code>（列表）。另有 <code>get_my_payslip(run_no)</code>，但目前 <strong>wendell-dataverse 示範資料裡單筆與列表列是同一套摘要欄位</strong>，模型常只呼叫列表就回得出「明細」——這不算壞掉。若講師要強制學員看到單筆工具名稱，再送：<code>請用 get_my_payslip 查 PAY-2026-06</code>。</p>
 <p><strong>討論問題（練習結束後）：</strong></p>
 <p>「如果 Codex 回傳的薪資和你自己心算的不一樣，你下一步怎麼做？」</p>
 <p>這個問題的目的：建立「AI 的輸出是參考，不是最終答案」的心態。</p>
@@ -261,7 +262,7 @@ Codex 提出的預覽長什麼樣子？把它抄下來：
 <h3 id="情境-4">情境</h3>
 <p>你上週出差拜訪客戶，有一筆計程車費要報銷。</p>
 <h3 id="step-1建立費用報銷單10-分鐘">Step 1：建立費用報銷單（10 分鐘）</h3>
-<pre class="copy-prompt"><code>幫我建一筆費用報銷，項目是『計程車費』，金額 350 元，說明寫『示範—你的姓名縮寫，拜訪客戶』。先給我看預覽，不要送出。</code></pre>
+<pre class="copy-prompt"><code>幫我建一筆費用報銷，項目是『計程車費』，金額 350 元，說明寫『示範—WDL-E001，拜訪客戶』（請把 WDL-E001 換成設定卡上的示範員工編號）。先給我看預覽，不要送出。</code></pre>
 <pre class="worksheet"><code>Codex 回傳的預覽內容：</code></pre>
 <p>核對無誤後：</p>
 <pre class="copy-prompt"><code>確認，幫我送出。</code></pre>
@@ -320,13 +321,13 @@ Codex 提出的預覽長什麼樣子？把它抄下來：
 </tr>
 <tr>
 <td><code>get_my_payslips</code></td>
-<td>列出可查的薪資單</td>
-<td>「我有哪幾個月的薪資單？」</td>
+<td><strong>課堂主工具</strong>：列出可查的薪資單（摘要已含實發等欄位）</td>
+<td>「我有哪幾個月的薪資單？」／「幫我查 2026 年 6 月的薪資。」</td>
 </tr>
 <tr>
 <td><code>get_my_payslip</code></td>
-<td>查一份薪資明細</td>
-<td>「幫我查 2026 年 6 月的薪資。」（示範有 4／5／6 月）</td>
+<td>依單號再取一筆（示範環境與列表列同欄位；常可不叫）</td>
+<td>「請用 get_my_payslip 查 PAY-2026-06」（要點名工具時才用）</td>
 </tr>
 <tr>
 <td><code>submit_leave</code></td>

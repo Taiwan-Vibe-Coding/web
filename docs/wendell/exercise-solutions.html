@@ -63,7 +63,7 @@
 <p>問法：<code>請用 platform_health 查系統健康狀態…</code>。同對話再查薪資。</p>
 <blockquote>
 <p>可見：<code>系統健康狀態正常，所有服務皆為 ok。</code><br />
-薪資：三張——PAY-2026-06（6 月）／PAY-2026-05／PAY-2026-04；6 月實發 NT$52,646.00（單號勿含 <code>/</code>，否則 get_my_payslip 會 404）</p>
+薪資：三張——PAY-2026-06（6 月）／PAY-2026-05／PAY-2026-04；6 月實發 NT$52,646.00。課堂主路徑用 <code>get_my_payslips</code> 即可（示範環境 <code>get_my_payslip</code> 與列表列同摘要；單號勿含 <code>/</code>，否則單筆路徑會 404）</p>
 </blockquote>
 <table>
 <thead>
@@ -109,7 +109,7 @@
 <li>確認 AR 可用（練習一複合查詢可能用到）；失敗才準備替代說明</li>
 <li>準備一段「講師版 System Prompt」課堂對比用</li>
 <li>課前跑 <code>platform_health</code>；試建客戶＋報價各一次（皆 <code>confirm=false</code>、名稱加臨時前綴、不送出），確認寫入預覽可用</li>
-<li>開場再口頭強調姓名前綴：今天新建的客戶／廠商／單據名稱都要加自己的英文縮寫（例如 <code>YL_測試客戶</code>）</li>
+<li>開場再口頭強調示範員工編號前綴：今天新建的客戶／廠商／單據名稱都要加自己的示範員工編號（例如 <code>WDL-E001_測試客戶</code>）</li>
 </ul>
 <p><strong>分組建議：</strong></p>
 <ul>
