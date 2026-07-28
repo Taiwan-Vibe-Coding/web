@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codex 日常工作小技巧｜穩得 AI 課程</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow">Day 3 · Session 3 · 共同練習</div>
+  <h1>不連 MCP，也能用 Codex 完成日常工作</h1>
+  <p class="lede">整理、比較、改寫、規劃，以及人工確認</p>
+</header>
+<blockquote>
+<p><strong>這份練習不需要</strong>：MCP、設定卡、Bearer 或 ERP 連線。</p>
+<p><strong>這份練習需要</strong>：一小段你願意用於練習的文字；若是公司資料，請先去識別化。</p>
+<p><strong>共同原則</strong>：Codex 可以先產出草稿，但不會替你承擔確認責任；有不確定處要標示「待確認」。</p>
+</blockquote>
+<h2>練習一：雜亂訊息變成可執行待辦</h2>
+<p>貼上一段已去識別化的會議筆記、工作訊息或自己寫的情境，輸入：</p>
+<pre class="copy-prompt"><code>請協助我整理以下內容。
+輸出成表格，欄位為：重點、待辦事項、負責人、期限、需要確認處。
+資料沒有明確寫出時，請標示「待確認」，不要自行猜測。
+
+[貼上內容]</code></pre>
+<p><strong>檢查：</strong>Codex 有沒有把推測當成事實？期限和負責人是否真的來自原文？</p>
+<h2>練習二：同一件事，三種溝通語氣</h2>
+<p>選一個日常情境，例如催件、會議通知、請同事補資料，輸入：</p>
+<pre class="copy-prompt"><code>請將以下需求改寫成 Email，提供三個版本：
+1. 正式；2. 親切合作；3. 最精簡。
+每個版本都要包含主旨、收件者要做的事、期限與下一步。
+不確定的資訊請以 [待確認] 標示。
+
+[貼上需求]</code></pre>
+<p><strong>檢查：</strong>哪一版最符合對象？語氣變了，但事實、期限與責任是否一致？</p>
+<h2>練習三：兩段內容的差異與風險</h2>
+<p>選兩段已去識別化的規格、公告、SOP 或自己編寫的範例，輸入：</p>
+<pre class="copy-prompt"><code>請比較以下 A、B 兩段內容，輸出表格：
+比較面向、A 的內容、B 的內容、差異、可能影響、需要人工確認處。
+只能根據原文比較；原文沒有的資訊請標示「無法判斷」。
+
+A：
+[貼上內容]
+
+B：
+[貼上內容]</code></pre>
+<p><strong>檢查：</strong>「可能影響」是否是合理提醒，而不是被說成既定事實？</p>
+<h2>練習四：我的今日工作排序</h2>
+<p>將今天或本週的工作事項去識別化後貼上，輸入：</p>
+<pre class="copy-prompt"><code>請將下列工作事項整理成今日行動清單。
+依「急迫性、影響程度、可否在 30 分鐘內完成」排序，
+輸出：優先順序、下一個具體動作、預估時間、需要誰確認。
+不要自行替我承諾期限或替我決定權限事項。
+
+[貼上事項]</code></pre>
+<p><strong>檢查：</strong>排序是否符合你的實際工作？最後決定仍由你做。</p>
+<h2>收束：不連 MCP 與連 MCP 的差別</h2>
+<table>
+<thead><tr><th>情境</th><th>Codex 處理什麼</th><th>你要特別確認什麼</th></tr></thead>
+<tbody>
+<tr><td>不連 MCP</td><td>你提供的文字、文件與已授權資料</td><td>內容是否正確、是否有自行推測、資料是否可提供</td></tr>
+<tr><td>連 MCP</td><td>依權限連接外部系統的資料或工具</td><td>資料範圍、身分權限、預覽內容與是否確認送出</td></tr>
+</tbody>
+</table>
+<p><a href="session-03-lesson-plan.html">回到 Session 3 課程計畫</a>　<a href="session-03-exercises.html">公司資料整合練習</a></p>
+</main>
+</body>
+</html>

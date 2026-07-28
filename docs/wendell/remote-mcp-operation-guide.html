@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>遠端 MCP 操作指南｜穩得 AI 課程</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow">穩得 AI 課程 · Session 2</div>
+  <h1>遠端 MCP 操作指南</h1>
+  <p class="lede">先連線驗收，再開始 AI＋ERP 練習</p>
+</header>
+
+<blockquote>
+<p><strong>這份指南的對象</strong>：參加課程、要使用公司已提供 MCP 的學員。</p>
+<p><strong>不包含</strong>：MCP 伺服器開發、ERP 程式修改，或自行建立公司系統串接。</p>
+<p><strong>安全原則</strong>：一人一張設定卡、一人一個 Bearer；不轉傳、不截圖、不互換。</p>
+</blockquote>
+
+<h2>一、MCP 需要自己寫程式嗎？</h2>
+<table>
+<thead><tr><th>情境</th><th>你要做的事</th><th>是否寫程式</th></tr></thead>
+<tbody>
+<tr><td>上課查自己的示範資料、預覽請假</td><td>把設定卡提供的課堂 MCP 加到 ChatGPT Work，依指示操作</td><td><strong>不需要</strong></td></tr>
+<tr><td>公司想連既有 ERP、網站或軟體</td><td>由 MIS／技術人員評估權限、資料範圍、稽核與串接方式；可採既有服務或開發 MCP</td><td>可能需要，屬系統導入工作</td></tr>
+</tbody>
+</table>
+<p>本課的目標是第一列：學會安全使用既有工具，不是要求每位學員變成程式設計師。</p>
+
+<h2>二、課前確認（遠端）</h2>
+<ol>
+<li>使用自己的 ChatGPT Work 帳號與可連外的電腦；準備瀏覽器或桌面 App。</li>
+<li>向講師／課務取得<strong>專屬設定卡</strong>。若你只有 PDF 教材、沒有設定卡，請先回報；不要猜 URL、不要使用 <code>127.0.0.1</code>、也不要借同學的卡。</li>
+<li>確認可以開啟課程教材與 ChatGPT Work。若公司網路限制外連，課前通知講師。</li>
+</ol>
+
+<h2>三、設定與連線驗收</h2>
+<ol>
+<li>ChatGPT Work：<strong>Plugins → 齒輪 Manage → MCPs → Add server → Streamable HTTP</strong>。</li>
+<li>只依自己的設定卡填入名稱、URL（須含 <code>/mcp</code>）及 <code>Authorization: Bearer …</code>；儲存並開啟該 MCP。</li>
+<li>開一個全新任務，輸入：</li>
+</ol>
+<pre class="copy-prompt"><code>請用 platform_health 查系統健康狀態。</code></pre>
+<p>驗收成功時，應顯示服務正常，且示範員工代碼與你的設定卡一致。<strong>不要把回應全文、設定卡或 Bearer 貼到群組。</strong></p>
+
+<h2>四、未連線時怎麼做</h2>
+<table>
+<thead><tr><th>情況</th><th>先做什麼</th><th>不要做什麼</th></tr></thead>
+<tbody>
+<tr><td>沒有設定卡</td><td>向課務索取專屬設定卡；先閱讀本頁第一節與 Session 2 的任務說明</td><td>猜測 URL、沿用 PDF 內舊範例、借用他人 Bearer</td></tr>
+<tr><td>設定後看不到工具</td><td>檢查 MCP 是否開啟、URL 是否含 <code>/mcp</code>、是否重開新任務；回報講師</td><td>切換到本機 STDIO 或自行安裝未知 MCP</td></tr>
+<tr><td>網路或服務中斷</td><td>改做 mock 練習：先寫出「我想查今年請假紀錄」與「我想申請下週年假，先預覽」兩個問法，並列出預覽時要核對的日期、假別與天數</td><td>把無法連線當成已完成寫入，或跳過 preview → confirm</td></tr>
+</tbody>
+</table>
+
+<h2>五、完成後再進行正式練習</h2>
+<ol>
+<li>先查「我的資料」，確認資料範圍與設定卡一致。</li>
+<li>需要寫入時，先要求 preview。</li>
+<li>核對日期、對象、類型與數量後，才明確 confirm。</li>
+</ol>
+<p><a href="session-02-lesson-plan.html">回到 Session 2 課程計畫</a>　<a href="session-02-exercises.html">開始 Session 2 練習</a></p>
+</main>
+</body>
+</html>
