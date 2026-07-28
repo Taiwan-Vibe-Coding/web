@@ -1,14 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
   <title>Codex 日常工作小技巧｜穩得 AI 課程</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico?v=3" sizes="any" />
+  <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png?v=3" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
-<main>
-<header>
+<div class="wrap">
+<nav class="top">
+  <a class="brand-mark" href="index.html" title="Taiwan Vibe Coding"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding" /></a>
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-03-lesson-plan.html">上一份</a>
+  <a href="session-03-exercises.html">下一份</a>
+</nav>
+<header class="doc-head">
   <div class="eyebrow">Day 3 · Session 3 · 共同練習</div>
   <h1>不連 MCP，也能用 Codex 完成日常工作</h1>
   <p class="lede">整理、比較、改寫、規劃，以及人工確認</p>
@@ -18,8 +30,115 @@
 <p><strong>這份練習需要</strong>：一小段你願意用於練習的文字；若是公司資料，請先去識別化。</p>
 <p><strong>共同原則</strong>：Codex 可以先產出草稿，但不會替你承擔確認責任；有不確定處要標示「待確認」。</p>
 </blockquote>
+<p><strong>沒有自己的練習素材？</strong>請使用 <a href="session-03-no-mcp-demo-data.html">本堂示範資料</a>。所有內容均為虛構情境，不含真實客戶、員工或公司機密。</p>
+
+<h2>先認識：ChatGPT Work／Codex 可以做什麼？</h2>
+<p>同一個 ChatGPT 帳號中，適合依工作型態選工具。畫面名稱、可用功能與位置會因帳號方案、公司工作區與管理員設定而不同；以下以課堂常見操作為例。</p>
+
+<div class="feature-grid">
+<section class="feature-card">
+<p class="feature-tag">快速問題</p>
+<h3>Chat</h3>
+<p>適合即問即答、腦力激盪、改一段文字或確認一個觀念。</p>
+<p><strong>例：</strong>「把這段公告改成 100 字內、口氣親切的版本。」</p>
+</section>
+<section class="feature-card">
+<p class="feature-tag">多步驟任務</p>
+<h3>Work</h3>
+<p>適合整理資料、研究、產出文件、表格、簡報或報告等有明確成果的工作。</p>
+<p><strong>例：</strong>「依附件會議筆記，做一份待辦表和一封會後追蹤信。」</p>
+</section>
+<section class="feature-card">
+<p class="feature-tag">技術工作</p>
+<h3>Codex</h3>
+<p>適合處理程式、資料夾、專案檔與技術驗證；不必是工程師才可提出需求，但涉及檔案或程式時要先說明範圍。</p>
+<p><strong>例：</strong>「檢查這個資料夾的檔名是否一致，先列出建議，不要直接改檔。」</p>
+</section>
+</div>
+
+<h3>畫面位置示意</h3>
+<p class="ui-caption">這是課堂用的介面示意，不是個人帳號截圖；實際位置可能因版本不同而略有差異。</p>
+<div class="ui-demo" role="img" aria-label="ChatGPT Work 與 Codex 操作位置示意">
+  <div class="ui-demo-sidebar">
+    <strong>ChatGPT</strong>
+    <span>＋ 新對話</span>
+    <span>▣ Projects</span>
+    <span>⌁ Plugins</span>
+  </div>
+  <div class="ui-demo-main">
+    <div class="ui-demo-switch"><span>Chat</span><strong>Work</strong><span>Codex</span></div>
+    <div class="ui-demo-project">選擇既有 Project，或開新對話</div>
+    <div class="ui-demo-prompt">輸入目標 → 加入檔案／背景 → 指定成果格式 → 檢查結果</div>
+  </div>
+</div>
+
+<h3>從桌面 App 開始：三步驟</h3>
+<ol>
+<li>在左上角先選 <strong>ChatGPT</strong> 或 <strong>Codex</strong>；在 ChatGPT 頁面中，再由上方切換 <strong>Chat</strong>／<strong>Work</strong>。</li>
+<li>選擇既有 Project 或開新對話，清楚說明目標、可用素材、限制與驗收方式。</li>
+<li>先檢查結果，再在同一對話中要求修改。需要本機檔案時，只開放這次任務真正需要的資料夾或檔案。</li>
+</ol>
+
+<table>
+<thead><tr><th>資料位置</th><th>可做的事</th><th>重要提醒</th></tr></thead>
+<tbody>
+<tr><td>Cloud Work（網頁／手機／桌面）</td><td>在不同裝置續接同一個 Work 對話；用 Project 保存相關內容。</td><td>以帳號、方案與工作區權限為準。</td></tr>
+<tr><td>桌面 App 的本機資料夾</td><td>在允許時，讓 Work 或 Codex 使用你明確授權的本機檔案。</td><td>只授權任務需要的範圍；本機檔案與輸出預設留在該電腦，除非你自行分享或移動。</td></tr>
+<tr><td>Voice（選用）</td><td>以語音交辦 Work 或 Codex 任務，並在過程中自然插話修正。</td><td>需帳號支援並允許麥克風；有些情境還需要螢幕／音訊或輔助使用權限。</td></tr>
+</tbody>
+</table>
+
+<h2>四個今天就能用的小功能</h2>
+<table>
+<thead><tr><th>功能</th><th>適合做什麼</th><th>示範操作</th></tr></thead>
+<tbody>
+<tr><td><strong>Projects</strong></td><td>把同一件持續性工作需要的聊天、檔案與指示放在一起。</td><td>建立「我的每週工作」Project，加入一份去識別化範例與指示：「所有輸出都要標示待確認處。」</td></tr>
+<tr><td><strong>檔案與文字整理</strong></td><td>將你明確提供、且已授權使用的資料整理成摘要、表格、比較表或初稿。</td><td>加入一段會議筆記，要求「先列待辦，再列缺少資訊；不要自行補寫。」</td></tr>
+<tr><td><strong>Work 成果任務</strong></td><td>一次交辦有多個步驟、有具體交付物的任務。</td><td>切到 Work，輸入「依下面素材產出一頁會議摘要、待辦表與 Email 草稿；先給我大綱確認。」</td></tr>
+<tr><td><strong>Plugins／Apps</strong></td><td>在公司允許且已連線時，使用外部服務或資料來源。</td><td>Plugins 是把 Skills、Apps 或 App templates 打包的工作能力；先查看資料範圍與動作權限，再決定是否連接。</td></tr>
+</tbody>
+</table>
+
+<h3>示範一：把自己的工作資訊整理成固定格式</h3>
+<ol>
+<li>選擇 Chat 或 Work，開新對話。</li>
+<li>貼上已去識別化的工作事項，或加入已授權的檔案。</li>
+<li>要求固定欄位、限制與待確認標記。</li>
+<li>檢查內容後，再要求修正；不要把初稿直接當成定案。</li>
+</ol>
+<pre class="copy-prompt"><code>請把以下內容整理為「本週工作清單」。
+請輸出表格：事項、下一步、預估時間、需要誰確認、待確認處。
+只能根據我提供的內容；不確定就標示「待確認」。
+
+[貼上已去識別化內容]</code></pre>
+
+<h3>示範二：以 Work 產出一份可繼續修改的成果</h3>
+<ol>
+<li>切到 Work，說明你希望完成的成果。</li>
+<li>提供素材、格式、限制與驗收條件。</li>
+<li>先要求大綱或初稿，再逐步修正，而不是一次直接定稿。</li>
+</ol>
+<pre class="copy-prompt"><code>請依以下素材協助我完成一份會議後續處理包：
+1. 一頁重點摘要；2. 待辦表；3. 120 字內的追蹤 Email 草稿。
+先提出大綱與你需要我確認的問題；未確認前不要自行補寫事實。
+
+[貼上已去識別化素材]</code></pre>
+
+<h3>Plugins／Apps：連接前先看清楚</h3>
+<p>Plugin 不等於自動取得公司資料。它可能只包含操作指引（Skills），也可能需要 Apps 才能連到外部資料或執行動作。即使 ChatGPT 中看得到某個 Plugin，是否能安裝、是否能連接 App、是否能執行寫入，仍取決於方案、工作區、角色與來源系統本身的權限。</p>
+<ol>
+<li>從 <strong>Plugins</strong> 或 <strong>Settings → Plugins</strong> 找到要用的能力，先看它包含的 Apps、所需設定與隱私政策。</li>
+<li>只有在公司允許時才按 <strong>Connect</strong>；若需要，完成 OAuth 與同步設定。</li>
+<li>連接後，以 <code>@</code> 提及 App，或在輸入框按 <code>＋ → More</code> 選擇 App。</li>
+<li>第一次先用低風險、唯讀的問題測試；若是建立、修改或傳送資料的動作，先確認是否需要人工確認。</li>
+</ol>
+<blockquote>
+<p><strong>課堂原則：</strong>看得到 Plugin 不代表有權使用資料；連上 App 也不會越過原系統權限。公司資料的 Plugin／App 由 MIS 或工作區管理員確認資料範圍、唯讀／寫入權限與核准流程後再使用。</p>
+</blockquote>
+<p class="source-note">功能說明參考 OpenAI 的 <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" target="_blank" rel="noopener">ChatGPT Work and Codex</a> 與 <a href="https://help.openai.com/en/articles/20001256" target="_blank" rel="noopener">Plugins in ChatGPT and Codex</a>；可用功能仍以個人帳號與公司工作區設定為準。課堂保留介面示意而未放固定截圖，因實際介面與權限會因帳號而異。</p>
+
 <h2>練習一：雜亂訊息變成可執行待辦</h2>
-<p>貼上一段已去識別化的會議筆記、工作訊息或自己寫的情境，輸入：</p>
+<p>貼上一段已去識別化的會議筆記、工作訊息或自己寫的情境；沒有素材時可使用<a href="session-03-no-mcp-demo-data.html#meeting">示範資料一</a>。輸入：</p>
 <pre class="copy-prompt"><code>請協助我整理以下內容。
 輸出成表格，欄位為：重點、待辦事項、負責人、期限、需要確認處。
 資料沒有明確寫出時，請標示「待確認」，不要自行猜測。
@@ -27,7 +146,7 @@
 [貼上內容]</code></pre>
 <p><strong>檢查：</strong>Codex 有沒有把推測當成事實？期限和負責人是否真的來自原文？</p>
 <h2>練習二：同一件事，三種溝通語氣</h2>
-<p>選一個日常情境，例如催件、會議通知、請同事補資料，輸入：</p>
+<p>選一個日常情境，例如催件、會議通知、請同事補資料；沒有素材時可使用<a href="session-03-no-mcp-demo-data.html#email">示範資料二</a>。輸入：</p>
 <pre class="copy-prompt"><code>請將以下需求改寫成 Email，提供三個版本：
 1. 正式；2. 親切合作；3. 最精簡。
 每個版本都要包含主旨、收件者要做的事、期限與下一步。
@@ -36,7 +155,7 @@
 [貼上需求]</code></pre>
 <p><strong>檢查：</strong>哪一版最符合對象？語氣變了，但事實、期限與責任是否一致？</p>
 <h2>練習三：兩段內容的差異與風險</h2>
-<p>選兩段已去識別化的規格、公告、SOP 或自己編寫的範例，輸入：</p>
+<p>選兩段已去識別化的規格、公告、SOP 或自己編寫的範例；沒有素材時可使用<a href="session-03-no-mcp-demo-data.html#sop">示範資料三</a>。輸入：</p>
 <pre class="copy-prompt"><code>請比較以下 A、B 兩段內容，輸出表格：
 比較面向、A 的內容、B 的內容、差異、可能影響、需要人工確認處。
 只能根據原文比較；原文沒有的資訊請標示「無法判斷」。
@@ -48,7 +167,7 @@ B：
 [貼上內容]</code></pre>
 <p><strong>檢查：</strong>「可能影響」是否是合理提醒，而不是被說成既定事實？</p>
 <h2>練習四：我的今日工作排序</h2>
-<p>將今天或本週的工作事項去識別化後貼上，輸入：</p>
+<p>將今天或本週的工作事項去識別化後貼上；沒有素材時可使用<a href="session-03-no-mcp-demo-data.html#priorities">示範資料四</a>。輸入：</p>
 <pre class="copy-prompt"><code>請將下列工作事項整理成今日行動清單。
 依「急迫性、影響程度、可否在 30 分鐘內完成」排序，
 輸出：優先順序、下一個具體動作、預估時間、需要誰確認。
@@ -56,7 +175,7 @@ B：
 
 [貼上事項]</code></pre>
 <p><strong>檢查：</strong>排序是否符合你的實際工作？最後決定仍由你做。</p>
-<h2>收束：不連 MCP 與連 MCP 的差別</h2>
+<h2>小結：不連 MCP 與連 MCP 的差別</h2>
 <table>
 <thead><tr><th>情境</th><th>Codex 處理什麼</th><th>你要特別確認什麼</th></tr></thead>
 <tbody>
@@ -65,6 +184,7 @@ B：
 </tbody>
 </table>
 <p><a href="session-03-lesson-plan.html">回到 Session 3 課程計畫</a>　<a href="session-03-exercises.html">公司資料整合練習</a></p>
-</main>
+</div>
+<script src="copy-blocks.js?v=5" defer></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <title>不連 MCP 練習示範資料｜穩得 AI 課程</title>
+  <link rel="icon" href="favicon.ico?v=3" sizes="any" />
+  <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png?v=3" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
+  <link rel="stylesheet" href="style.css?v=9" />
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a class="brand-mark" href="index.html" title="Taiwan Vibe Coding"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding" /></a>
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-03-no-mcp-exercises.html">回共同練習</a>
+  <a href="session-03-exercises.html">公司資料練習</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 3 · Session 3 · 示範資料</div>
+  <h1>不連 MCP 的日常工作練習：示範資料</h1>
+  <p class="lede">複製一段資料，再搭配共同練習頁的提示詞操作</p>
+</header>
+
+<blockquote>
+<p><strong>資料說明：</strong>以下人名、公司、日期、金額與情境均為虛構，僅供課堂練習。</p>
+<p><strong>使用方式：</strong>每題先複製「示範資料」，再回到共同練習頁複製對應提示詞；觀察 Codex 是否把不確定資訊標成「待確認」。</p>
+</blockquote>
+
+<h2 id="meeting">示範資料一：會議筆記 → 待辦表</h2>
+<pre class="copy-prompt"><code>7/28 週例會筆記（虛構）
+
+1. 林小姐說下週的新品測試排程可能會延後，但還沒有確定日期。
+2. 採購組要在週三前確認新的包材報價；目前有兩家廠商回覆，第三家還沒回。
+3. 業務組希望 8/5 前收到新品規格的一頁式簡介，但規格中的防水等級還在確認。
+4. 財務提醒本月差旅費單據最晚 8/1 交，不過是否能電子簽核要問主管。
+5. 下次會議暫定下週二下午，會議室還沒訂。
+</code></pre>
+<p><strong>觀察重點：</strong>誰是負責人、確切期限與會議室是否都有原文依據？沒有的地方應標示「待確認」。</p>
+
+<h2 id="email">示範資料二：口語需求 → 三種 Email</h2>
+<pre class="copy-prompt"><code>請幫我寫一封信給供應商。
+
+上週請他們提供新包材的報價，到現在還沒收到。主管希望本週三前拿到，但我不確定對方原本有沒有答應這個日期。信不要太兇，要請他們如果有困難先告訴我們；收件人姓名我晚一點再補。
+</code></pre>
+<p><strong>觀察重點：</strong>收件者姓名與「本週三」是否應標示待確認？三種語氣是否仍保留相同事實？</p>
+
+<h2 id="sop">示範資料三：兩段 SOP → 差異與待確認處</h2>
+<h3>A 版：設備借用流程（舊版）</h3>
+<pre class="copy-prompt"><code>1. 借用人填寫設備借用單。
+2. 組長核准後，借用人可至器材室領取設備。
+3. 歸還時由器材室人員確認外觀與配件。
+4. 若設備異常，借用人應於當日通知組長。
+</code></pre>
+<h3>B 版：設備借用流程（草案）</h3>
+<pre class="copy-prompt"><code>1. 借用人於線上表單登錄借用需求與預計歸還日。
+2. 借用金額超過新臺幣 20,000 元之設備，需由部門主管核准。
+3. 領取時應拍攝設備與配件照片，上傳至借用紀錄。
+4. 歸還後由管理人員在兩個工作天內完成檢查。
+5. 發現異常時，應先停止再次借用並通知管理人員。
+</code></pre>
+<p><strong>觀察重點：</strong>哪些是流程改變、哪些是新增控制？「借用金額」是否可能需要釐清是設備價值、押金或其他定義？</p>
+
+<h2 id="priorities">示範資料四：工作事項 → 今日行動清單</h2>
+<pre class="copy-prompt"><code>今天的工作事項（虛構）
+
+- 回覆客戶詢問的測試進度；客戶說下午前希望知道，但目前還在等工程師回覆。
+- 把上週採購的三張發票交給財務，期限是今天下班前。
+- 整理下週教育訓練的簽到表，活動在下週二。
+- 和同事確認會議室投影設備是否正常，沒有明確期限，但明天上午要開會。
+- 寫一份新品包材比較表，主管希望這週看得到，沒有指定哪一天。
+- 協助同事把一份 15 分鐘的簡報轉成一頁摘要；同事尚未說何時需要。
+</code></pre>
+<p><strong>觀察重點：</strong>Codex 的排序只是建議；是否需要他人確認、哪些期限未明確，都應保留給人判斷。</p>
+
+<h2>講師示範順序建議</h2>
+<ol>
+<li>先做示範資料一，帶全班看見「待確認」的價值。</li>
+<li>再做示範資料二，讓學員看到同一事實可以有不同語氣。</li>
+<li>時間足夠時，以示範資料三或四讓學員自行操作並分享結果。</li>
+</ol>
+<p><a href="session-03-no-mcp-exercises.html">回到共同練習頁</a></p>
+</div>
+<script src="copy-blocks.js?v=5" defer></script>
+</body>
+</html>
