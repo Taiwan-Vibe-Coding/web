@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="Cache-Control" content="no-cache"/>
+<title>Session 4 MCP 示範資料｜穩得 AI 課程</title><link rel="icon" href="favicon.ico?v=3" sizes="any"/><link rel="icon" href="favicon.svg?v=3" type="image/svg+xml"/><link rel="stylesheet" href="style.css?v=9"/></head>
+<body><div class="wrap"><nav class="top"><a class="brand-mark" href="index.html"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding"/></a><a href="index.html">教材目錄</a><span class="sep">·</span><a href="session-04-exercises.html">回練習題</a></nav>
+<header class="doc-head"><div class="eyebrow">Day 4 · Session 4 · 示範資料</div><h1>STDIO MCP 練習：設備借用資料</h1><p class="lede">全部為虛構資料，僅供本機唯讀 MCP 練習</p></header>
+<blockquote><p>請在新建的練習資料夾中，以 <code>equipment-loans.json</code> 為檔名建立資料檔。不得加入真實姓名、設備序號、公司內部位置或帳密。</p></blockquote>
+<pre class="copy-prompt"><code>{
+  "equipment": [
+    {"id":"EQ-001","name":"頻譜分析儀練習機","status":"borrowed","borrower_code":"DEMO-A01","due_date":"2026-08-03","note":"配件清單待確認"},
+    {"id":"EQ-002","name":"傳導干擾測試治具","status":"available","borrower_code":null,"due_date":null,"note":""},
+    {"id":"EQ-003","name":"校正用訊號產生器","status":"borrowed","borrower_code":"DEMO-B02","due_date":"2026-07-30","note":"歸還時間未確認"},
+    {"id":"EQ-004","name":"靜電放電測試槍練習機","status":"maintenance","borrower_code":null,"due_date":null,"note":"維護完成日待確認"}
+  ]
+}</code></pre>
+<h2>資料閱讀規則</h2><ul><li><code>status</code> 為 <code>borrowed</code> 才是目前借用中。</li><li><code>due_date</code> 為空，不可自行推算歸還日。</li><li><code>note</code> 有「待確認」時，工具輸出應保留這件事。</li><li>設備不存在時，應回覆找不到資料，不可產生虛構紀錄。</li></ul>
+<p><a href="session-04-exercises.html">回到練習題</a></p></div><script src="copy-blocks.js?v=5" defer></script></body></html>
