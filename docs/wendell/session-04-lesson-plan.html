@@ -27,9 +27,9 @@
 <p><strong>日期</strong>：2026-07-31（五）・結業</p>
 <p><strong>時長</strong>：3 小時</p>
 <p><strong>對象</strong>：全體學員；每人在新專案<strong>「穩得 AI 工作小工具」</strong>的個人練習資料夾完成一個 MCP 小成品。可互相討論，但不可只觀看他人操作。</p>
-<p><strong>工具</strong>：Codex 桌面 App + 本機 STDIO MCP + 教學專用 ERP 模擬案例</p>
-<p><strong>需要 ERP 連線</strong>：❌ 學員不需要連線；講師若示範，只能使用已核對的獨立 demo 環境</p>
-<p><strong>今日範圍</strong>：前 2 小時以本機、唯讀的模糊化訂單 Excel，先做不連 MCP 的查詢，再建立兩個工具的 MCP；最後 1 小時以模擬 ERP 查詢結果與預覽畫面練習人工核對，不讀取或寫入正式資料。<strong>不在「穩得業務工具」專案修改任何內容。</strong></p>
+<p><strong>工具</strong>：Codex 桌面 App + 本機 STDIO MCP + Session 2／3 雲端穩得 MCP</p>
+<p><strong>需要 ERP 連線</strong>：前兩小時 ❌（本機訂單 Excel／STDIO）；結業一小時 ✅ 雲端穩得 MCP（設定卡 demo，非正式系統）</p>
+<p><strong>今日範圍</strong>：前 2 小時以本機、唯讀的模糊化訂單 Excel，先做不連 MCP 的查詢，再建立兩個工具的 MCP；最後 1 小時切回雲端穩得 MCP，做複合查詢與 preview → confirm 判讀（寫入先預覽，未同意不送出）。<strong>不在「穩得業務工具」專案修改任何內容。</strong></p>
 </blockquote>
 <hr />
 <h2>課程目標</h2>
@@ -40,7 +40,7 @@
   <li>以正常、找不到資料、錯誤輸入三類問題測試 MCP。</li>
   <li>判斷一個原型是否值得交給 MIS／技術人員進一步評估，而不是直接碰正式資料。</li>
   <li>寫出自己的 System Prompt，並將 MCP 小成品放進部門「凡事問 AI」工作手冊。</li>
-  <li>依教學專用模擬 ERP 案例，判讀一次複合查詢結果與一次 preview → confirm 預覽；能說出何時不應確認送出。</li>
+  <li>以雲端穩得 MCP 完成一次複合查詢與一次 preview → confirm 預覽判讀；能說出何時不應確認送出。</li>
 </ol>
 <hr />
 <h2>本堂與課後的兩份練習資料</h2>
@@ -59,7 +59,7 @@
 <ul>
 <li>回顧前三堂：提示詞能整理使用者提供的內容；MCP 才能把明確工具與資料來源交給 Codex 使用。</li>
 <li>說明本堂只做 STDIO：它在自己的電腦上由命令啟動，適合學習與原型，不是公司共用服務。</li>
-<li>說明不做的事：不連 ERP、沒有 Bearer、沒有真實個資、不寫入、不發布。</li>
+<li>說明前兩小時不做的事：不連 ERP、沒有 Bearer、沒有真實個資、本機工具不寫入、不發布；結業一小時才切回雲端穩得 MCP。</li>
 </ul>
 <h4>先分清楚：Plugin、App 與 MCP</h4>
 <table>
@@ -123,11 +123,12 @@
 <p>每人以一個常用工作問題快速測試並修改一次；詳見練習題「結業一小時」。</p>
 <hr />
 <h3>15:10–15:25 核心二：ERP 複合查詢判讀</h3>
-<p>以練習題中的<a href="session-04-exercises.html#erp-mock">教學專用模擬案例</a>練習一次問多件事：把未付應付帳款、對應採購單、廠商付款條件與聯絡人整理成追蹤摘要。學員只判讀已提供的模擬結果；講師如需 live demo，只能使用已核對的獨立 demo 環境。Codex 可以整理資訊；哪一筆要付款、是否催貨，仍由人決定。</p>
+<p>切回 Session 2／3 的<strong>雲端穩得 MCP</strong>（設定卡／Bearer），依<a href="session-04-exercises.html#erp-mock">練習題提示詞</a>做一次「未付應付 + 採購單 + 廠商條件／聯絡人」複合查詢。學員核對回覆是否真的呼叫 MCP、資料是否串接完整；哪一筆要付款、是否催貨，仍由人決定。</p>
+<blockquote><p><strong>講師備註：</strong>若本機訂單 MCP 與雲端穩得同時啟用，請提醒學員這一題要用雲端工具；看不到工具時先查 <code>/mcp</code> 與設定卡。</p></blockquote>
 <hr />
 <h3>15:25–15:45 核心三：安全寫入判讀——preview → confirm</h3>
-<p>使用模擬的「新增測試客戶」預覽，核對名稱、國別與待確認事項，再決定<strong>是否應該</strong>確認送出。學員本堂不執行送出；不可連線修改既有或正式資料。</p>
-<blockquote><p><strong>與 STDIO 小成品的差別：</strong>前兩小時的本機工具是唯讀、虛構資料；此處以模擬預覽練習寫入安全判斷。正式系統的讀取與寫入，均須由授權流程與 MIS 另行管理。</p></blockquote>
+<p>仍用雲端穩得 MCP，以「新增測試客戶」做<strong>預覽</strong>（<code>confirm=false</code>），核對名稱前綴、國別與待確認事項，再決定<strong>是否應該</strong>確認送出。預設學員只做到預覽；僅在講師同意且前綴正確時，才允許 <code>confirm=true</code>。</p>
+<blockquote><p><strong>與 STDIO 小成品的差別：</strong>前兩小時的本機工具是唯讀、虛構／模糊化資料；此處回到受控雲端 demo，練習寫入安全判斷。正式系統的讀取與寫入，均須由授權流程與 MIS 另行管理。</p></blockquote>
 <hr />
 <h3>15:45–15:55 核心四：部門「凡事問 AI」工作手冊</h3>
 <p>將今天的 STDIO MCP 小成品、ERP 複合查詢與一項日常提示詞工作，放進同一張手冊；標出哪些事仍需人工確認。</p>

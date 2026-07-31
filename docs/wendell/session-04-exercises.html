@@ -9,7 +9,7 @@
 <body><div class="wrap">
 <nav class="top"><a class="brand-mark" href="index.html" title="Taiwan Vibe Coding"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding"/></a><a href="index.html">教材目錄</a><span class="sep">·</span><a href="session-04-lesson-plan.html">上一份</a><a href="session-04-mcp-demo-data.html">示範資料</a></nav>
 <header class="doc-head"><div class="eyebrow">Day 4 · Session 4 · 練習題</div><h1>先不連 MCP，再完成第一個 STDIO MCP</h1><p class="lede">同一份資料、兩種做法、唯讀兩個工具</p></header>
-<blockquote><p><strong>本堂規則：</strong>在新專案<strong>「穩得 AI 工作小工具」</strong>的新練習資料夾工作；可使用 <a href="session-04-mcp-demo-data.html">虛構設備借用資料</a>，或講師提供的模糊化訂單 Excel；不可連 ERP、不可貼帳密或 Bearer、不可做寫入；不可修改「穩得業務工具」。模糊化訂單 Excel 不可上傳 GitHub、外部雲端或公開教材。</p><p><strong>全員完成：</strong>每人都要在自己的電腦建立、啟動與測試 MCP。可兩人互相核對規格與錯誤訊息，但不可只觀看他人操作。</p></blockquote>
+<blockquote><p><strong>本堂規則：</strong>前兩小時在新專案<strong>「穩得 AI 工作小工具」</strong>的新練習資料夾工作（模糊化訂單 Excel／本機 STDIO MCP）；不可貼帳密或 Bearer、不可把 Excel 上傳 GitHub／外部雲端、不可修改「穩得業務工具」。結業一小時改回<strong>雲端穩得 MCP</strong>（Session 2／3 的設定卡），做複合查詢與 preview → confirm 判讀。<strong>寫入一律先預覽；未獲講師同意前，不要 <code>confirm=true</code> 送出。</strong></p><p><strong>全員完成：</strong>每人都要在自己的電腦建立、啟動與測試本機 MCP。可兩人互相核對規格與錯誤訊息，但不可只觀看他人操作。</p></blockquote>
 <h2>暖身：這件事需要哪一種能力？</h2>
 <p>先判斷，再做 MCP。請在每題後填入：<strong>直接用 Codex／Plugin／App／MCP／暫不做</strong>，並說明理由。</p>
 <pre class="worksheet"><code>1. 將一段已去識別化的會議筆記整理為待辦表：
@@ -181,53 +181,44 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 
 我修改後要保留的規則：</code></pre>
 <h3 id="erp-mock">二、ERP 複合查詢判讀（15:10–15:25）</h3>
-<p>這一題<strong>不連 ERP、也不呼叫你剛做好的訂單 MCP</strong>。請直接閱讀下方<strong>預先寫好的模擬回覆</strong>並判讀。</p>
-<blockquote><p><strong>為什麼不直接用 MCP？</strong>本堂前半的訂單 MCP 讀的是「模糊化訂單 Excel」；Session 2／3 的雲端 MCP 則是另一套示範資料。這裡要練的是：看到 AI 整理後的複合結果時，人如何核對與決定——所以使用教學專用模擬回覆，避免全班再切換系統或資料來源。</p></blockquote>
+<p>切回<strong>雲端穩得 MCP</strong>（Session 2／3 設定卡；HTTP／Streamable，不是本機訂單 STDIO）。確認 <code>/mcp</code> 看得到穩得伺服器後，用真實示範資料做複合查詢，再人工判讀。</p>
+<blockquote><p><strong>切換提醒：</strong>本機「訂單查詢 MCP」與雲端「穩得 MCP」可以同時存在，但這一題請明確使用雲端穩得工具查應付／採購／廠商。若工具清單看不到，先檢查設定卡、Bearer 與伺服器是否啟用。</p></blockquote>
 
-<div class="sample-result" id="mock-reply">
-  <div class="sample-result-label">模擬 Codex 回覆（預先寫好，供判讀；不是你的 MCP 即時查詢結果）</div>
-  <p><strong>付款追蹤摘要（模擬）</strong></p>
-  <table><thead><tr><th>廠商</th><th>發票／帳款</th><th>金額</th><th>到期日</th><th>採購品項</th><th>付款條件</th><th>聯絡人</th><th>待確認</th></tr></thead><tbody>
-  <tr><td>晨光校正服務</td><td>AP-DEMO-001</td><td>48,000 元</td><td>8/2</td><td>年度校正服務</td><td>月結 30 天</td><td>林小姐</td><td>是否已實際付款</td></tr>
-  <tr><td>遠景測試配件</td><td>AP-DEMO-002</td><td>26,500 元</td><td>8/8</td><td>測試配件組</td><td>月結 45 天</td><td>張先生</td><td>到貨狀態</td></tr>
-  </tbody></table>
-  <p class="sample-result-note">提醒：到期日較近不等於可直接付款；是否付款、是否催貨均<strong>待人工決定</strong>。</p>
-</div>
+<p>請把下面提示詞貼給 Codex（透過雲端穩得 MCP）：</p>
+<pre class="copy-prompt"><code>請透過穩得 MCP 做一份付款追蹤摘要：
+1. 列出所有未付的應付帳款：廠商、發票號、金額、到期日；
+2. 對應的採購單號與採購品項；
+3. 廠商的付款條件與聯絡人。
+請用繁體中文表格呈現。只能整理系統資料；哪一筆要優先付款請標示「待人工決定」，不要自行決定付款順序。</code></pre>
 
-<pre class="worksheet"><code>這份回覆看起來串接了哪些資料（例如帳款、採購、廠商）？
+<pre class="worksheet"><code>MCP 有被呼叫？□ 有　□ 沒有／不確定
+我看到它大概用了哪些工具（例如 list_ap_balances、list_purchase_orders、list_vendors）：
+
+這份回覆串接了哪些資料？
 
 我需要再核對的地方：
 
 我不會直接交給 Codex 決定的事：</code></pre>
 
-<h3>三、安全寫入判讀：preview → confirm（15:25–15:45）</h3>
-<blockquote><p>本題只判讀下方<strong>模擬預覽</strong>，不建立、不確認送出任何資料。正式系統的寫入由授權人員依既有流程處理。</p></blockquote>
+<h3 id="preview">三、安全寫入判讀：preview → confirm（15:25–15:45）</h3>
+<p>仍使用<strong>雲端穩得 MCP</strong>。先做<strong>預覽</strong>（不要送出），核對後再決定是否確認。</p>
+<blockquote><p><strong>安全規則：</strong>第一次呼叫務必讓系統先預覽（例如 <code>confirm=false</code> 或明確說「先預覽、不要送出」）。客戶名稱必須加你自己的示範員工編號前綴（如 <code>WDL-E001_測試客戶</code>）。未獲講師同意前，不要第二次呼叫 <code>confirm=true</code>。</p></blockquote>
 
-<div class="sample-result" id="preview">
-  <div class="sample-result-label">模擬新增客戶預覽（供判讀，尚未送出）</div>
-  <p><strong>動作：</strong>新增客戶（僅模擬預覽）</p>
-  <table><thead><tr><th>欄位</th><th>預覽內容</th></tr></thead><tbody>
-  <tr><td>客戶名稱</td><td>WDL-E0XX_測試客戶</td></tr>
-  <tr><td>國別</td><td>台灣</td></tr>
-  <tr><td>聯絡人</td><td>未提供</td></tr>
-  <tr><td>資料來源</td><td>課堂練習情境</td></tr>
-  </tbody></table>
-  <p><strong>待確認：</strong></p>
-  <ol>
-    <li>WDL-E0XX 是否為目前操作人的示範員工編號？</li>
-    <li>客戶名稱是否符合命名規則？</li>
-    <li>此筆是否確定只能建立在教學專用 demo，而非正式系統？</li>
-  </ol>
-  <p class="sample-result-note">判讀：只要任一待確認事項未釐清，就不應確認送出。一般學員本堂只練習指出問題，不執行寫入。</p>
-</div>
+<pre class="copy-prompt"><code>請透過穩得 MCP 新增一個客戶，名稱是「WDL-E0XX_測試客戶」（請把 WDL-E0XX 換成設定卡上的示範員工編號），國別台灣。
+先預覽，不要送出（confirm=false）。
+請列出將寫入的欄位與待確認事項。</code></pre>
 
-<pre class="worksheet"><code>預覽中我核對了：名稱／國別／其他：
+<pre class="worksheet"><code>預覽中我核對了：名稱／國別／前綴／其他：
+
+預覽是否正確使用我的示範員工編號前綴？□ 是　□ 否　□ 不確定
 
 我會選擇：□ 可以確認送出　□ 不應確認送出
 
 理由：
 
-如果名稱、國別或資料來源不正確，我應該怎麼做：</code></pre>
+如果名稱、國別、前綴或資料來源不正確，我應該怎麼做：
+
+（僅在講師同意且預覽正確時）我是否有做 confirm=true？□ 有　□ 沒有</code></pre>
 <h3>四、我的部門「凡事問 AI」工作手冊（15:45–15:55）</h3>
 <pre class="worksheet"><code>【我的部門 AI 工作手冊】—＿＿＿＿部門
 
@@ -243,7 +234,7 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 
 3. 哪些工作只用提示詞就足夠？
 
-4. 今天的 ERP 模擬複合查詢可以協助什麼？
+4. 今天的雲端 MCP 複合查詢可以協助什麼？
 
 5. 哪些工作需要 MCP 才值得做？
 
@@ -256,6 +247,6 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 <h3>五、1 分鐘結業分享（15:55–16:00）</h3>
 <ol><li>我今天的 MCP 解決什麼工作問題？</li><li>我在哪一步請 Codex 修改或修正？</li><li>下一個想做的 MCP，為什麼值得做或暫時不值得做？</li></ol>
 <h2>小結：原型完成後，下一步不是直接上線</h2>
-<p>STDIO MCP 小成品證明的是「工具設計是否有價值」。原型保留在「穩得 AI 工作小工具」；本堂最後一小時使用模擬 ERP 案例，目的是練習複合查詢與 preview → confirm 的判讀。若未來要把原型接公司資料或提供多人使用，才提出需求與測試結果，由 MIS／Cursor 在「穩得業務工具」評估資料來源、最小權限、稽核與維護責任。</p>
-<p><a href="session-04-lesson-plan.html">回到 Session 4 課程計畫</a>　<a href="session-04-mcp-demo-data.html">開啟示範資料</a></p>
+<p>STDIO MCP 小成品證明的是「工具設計是否有價值」。原型保留在「穩得 AI 工作小工具」。本堂最後一小時回到雲端穩得 MCP，練習複合查詢與 preview → confirm 的人工判讀。若未來要把本機原型接公司資料或提供多人使用，才提出需求與測試結果，由 MIS／Cursor 在「穩得業務工具」評估資料來源、最小權限、稽核與維護責任。</p>
+<p><a href="session-04-lesson-plan.html">回到 Session 4 課程計畫</a>　<a href="session-04-mcp-demo-data.html">開啟示範資料</a>　<a href="remote-mcp-operation-guide.html">遠端 MCP 操作指南</a></p>
 </div><script src="copy-blocks.js?v=5" defer></script></body></html>
