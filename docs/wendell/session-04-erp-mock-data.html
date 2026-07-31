@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="Cache-Control" content="no-cache"/>
-<title>Session 4 ERP 模擬案例｜穩得 AI 課程</title><link rel="icon" href="favicon.ico?v=3" sizes="any"/><link rel="icon" href="favicon.svg?v=3" type="image/svg+xml"/><link rel="stylesheet" href="style.css?v=9"/></head>
-<body><div class="wrap"><nav class="top"><a class="brand-mark" href="index.html"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding"/></a><a href="index.html">教材目錄</a><span class="sep">·</span><a href="session-04-exercises.html">回練習題</a></nav>
-<header class="doc-head"><div class="eyebrow">Day 4 · Session 4 · 教學專用模擬案例</div><h1>ERP 複合查詢與預覽判讀</h1><p class="lede">所有名稱、編號、日期與金額均為虛構；不可連到正式系統操作</p></header>
-<blockquote><p>此頁用來練習「AI 整理資料、人做決定」及 preview → confirm。它不是正式 ERP，也不是可送出的表單。</p></blockquote>
-<h2>情境資料（虛構）</h2>
-<table><thead><tr><th>應付帳款</th><th>廠商</th><th>金額</th><th>到期日</th><th>對應採購單</th></tr></thead><tbody>
-<tr><td>AP-DEMO-001</td><td>晨光校正服務</td><td>48,000 元</td><td>2026-08-02</td><td>PO-DEMO-001</td></tr>
-<tr><td>AP-DEMO-002</td><td>遠景測試配件</td><td>26,500 元</td><td>2026-08-08</td><td>PO-DEMO-002</td></tr>
-</tbody></table>
-<table><thead><tr><th>採購單</th><th>品項</th><th>付款條件</th><th>聯絡人</th><th>資料狀態</th></tr></thead><tbody>
-<tr><td>PO-DEMO-001</td><td>年度校正服務</td><td>月結 30 天</td><td>林小姐</td><td>已收貨；實際付款日未提供</td></tr>
-<tr><td>PO-DEMO-002</td><td>測試配件組</td><td>月結 45 天</td><td>張先生</td><td>到貨狀態待確認</td></tr>
-</tbody></table>
-<h2>模擬的 Codex 複合查詢回覆</h2>
-<pre class="copy-prompt"><code>付款追蹤摘要（模擬）
-
-| 廠商 | 發票／帳款 | 金額 | 到期日 | 採購品項 | 付款條件 | 聯絡人 | 待確認 |
-| 晨光校正服務 | AP-DEMO-001 | 48,000 元 | 8/2 | 年度校正服務 | 月結 30 天 | 林小姐 | 是否已實際付款 |
-| 遠景測試配件 | AP-DEMO-002 | 26,500 元 | 8/8 | 測試配件組 | 月結 45 天 | 張先生 | 到貨狀態 |
-
-提醒：到期日較近不等於可直接付款；是否付款、是否催貨均待人工決定。</code></pre>
-<h2 id="preview">模擬新增客戶預覽</h2>
-<pre class="copy-prompt"><code>動作：新增客戶（僅模擬預覽，尚未送出）
-
-客戶名稱：WDL-E0XX_測試客戶
-國別：台灣
-聯絡人：未提供
-資料來源：課堂練習情境
-
-待確認：
-1. WDL-E0XX 是否為目前操作人的示範員工編號？
-2. 客戶名稱是否符合命名規則？
-3. 此筆是否確定只能建立在教學專用 demo，而非正式系統？</code></pre>
-<p><strong>判讀：</strong>只要任一待確認事項未釐清，就不應確認送出。一般學員本堂只練習指出問題，不執行寫入。</p>
-<p><a href="session-04-exercises.html">回到練習題</a></p></div><script src="copy-blocks.js?v=5" defer></script></body></html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="refresh" content="0; url=session-04-exercises.html#erp-mock"/>
+<title>ERP 模擬案例已併入練習題｜穩得 AI 課程</title>
+<link rel="icon" href="favicon.ico?v=3" sizes="any"/>
+<link rel="stylesheet" href="style.css?v=9"/>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a class="brand-mark" href="index.html"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding"/></a>
+  <a href="index.html">教材目錄</a>
+  <span class="sep">·</span>
+  <a href="session-04-exercises.html#erp-mock">前往練習題</a>
+</nav>
+<header class="doc-head">
+  <div class="eyebrow">Day 4 · Session 4</div>
+  <h1>ERP 模擬案例已併入練習題</h1>
+  <p class="lede">情境資料、模擬回覆與 preview 判讀現在直接放在練習題結業段</p>
+</header>
+<p>若未自動跳轉，請開啟 <a href="session-04-exercises.html#erp-mock">session-04-exercises.html#erp-mock</a>。</p>
+</div>
+</body>
+</html>
