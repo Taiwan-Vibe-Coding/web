@@ -180,29 +180,12 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 我用它測試的問題：
 
 我修改後要保留的規則：</code></pre>
-<h3>二、ERP 複合查詢判讀（15:10–15:25）</h3>
-<p>這一題<strong>不連 ERP</strong>。請直接閱讀下方虛構資料與模擬回覆，再判讀結果。講師如示範 live 查詢，學員只觀摩已核對的獨立 demo 環境。</p>
-<blockquote><p>以下案例用來練習「AI 整理資料、人做決定」。它不是正式 ERP，也不是可送出的表單；所有名稱、編號、日期與金額均為虛構。</p></blockquote>
-
-<h4 id="erp-mock">情境資料（虛構）</h4>
-<table><thead><tr><th>應付帳款</th><th>廠商</th><th>金額</th><th>到期日</th><th>對應採購單</th></tr></thead><tbody>
-<tr><td>AP-DEMO-001</td><td>晨光校正服務</td><td>48,000 元</td><td>2026-08-02</td><td>PO-DEMO-001</td></tr>
-<tr><td>AP-DEMO-002</td><td>遠景測試配件</td><td>26,500 元</td><td>2026-08-08</td><td>PO-DEMO-002</td></tr>
-</tbody></table>
-<table><thead><tr><th>採購單</th><th>品項</th><th>付款條件</th><th>聯絡人</th><th>資料狀態</th></tr></thead><tbody>
-<tr><td>PO-DEMO-001</td><td>年度校正服務</td><td>月結 30 天</td><td>林小姐</td><td>已收貨；實際付款日未提供</td></tr>
-<tr><td>PO-DEMO-002</td><td>測試配件組</td><td>月結 45 天</td><td>張先生</td><td>到貨狀態待確認</td></tr>
-</tbody></table>
-
-<p>可先把下面的「任務提示詞」貼給 Codex 練習怎麼問；本堂實際判讀請以緊接其後的<strong>模擬回覆</strong>為準（不必連系統）。</p>
-<pre class="copy-prompt"><code>請做一份付款追蹤摘要：
-1. 列出所有未付的應付帳款：廠商、發票號、金額、到期日；
-2. 對應的採購單號與採購品項；
-3. 廠商的付款條件與聯絡人。
-請用繁體中文表格呈現。只能整理系統資料；哪一筆要優先付款請標示「待人工決定」。</code></pre>
+<h3 id="erp-mock">二、ERP 複合查詢判讀（15:10–15:25）</h3>
+<p>這一題<strong>不連 ERP、也不呼叫你剛做好的訂單 MCP</strong>。請直接閱讀下方<strong>預先寫好的模擬回覆</strong>並判讀。</p>
+<blockquote><p><strong>為什麼不直接用 MCP？</strong>本堂前半的訂單 MCP 讀的是「模糊化訂單 Excel」；Session 2／3 的雲端 MCP 則是另一套示範資料。這裡要練的是：看到 AI 整理後的複合結果時，人如何核對與決定——所以使用教學專用模擬回覆，避免全班再切換系統或資料來源。</p></blockquote>
 
 <div class="sample-result" id="mock-reply">
-  <div class="sample-result-label">模擬 Codex 回覆（供判讀，不必複製）</div>
+  <div class="sample-result-label">模擬 Codex 回覆（預先寫好，供判讀；不是你的 MCP 即時查詢結果）</div>
   <p><strong>付款追蹤摘要（模擬）</strong></p>
   <table><thead><tr><th>廠商</th><th>發票／帳款</th><th>金額</th><th>到期日</th><th>採購品項</th><th>付款條件</th><th>聯絡人</th><th>待確認</th></tr></thead><tbody>
   <tr><td>晨光校正服務</td><td>AP-DEMO-001</td><td>48,000 元</td><td>8/2</td><td>年度校正服務</td><td>月結 30 天</td><td>林小姐</td><td>是否已實際付款</td></tr>
@@ -211,7 +194,7 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
   <p class="sample-result-note">提醒：到期日較近不等於可直接付款；是否付款、是否催貨均<strong>待人工決定</strong>。</p>
 </div>
 
-<pre class="worksheet"><code>模擬回覆串接了哪些資料？
+<pre class="worksheet"><code>這份回覆看起來串接了哪些資料（例如帳款、採購、廠商）？
 
 我需要再核對的地方：
 
