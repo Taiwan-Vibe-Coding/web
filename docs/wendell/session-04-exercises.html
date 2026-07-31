@@ -93,9 +93,45 @@ Codex 提出的檔案結構：
 <ol><li>開啟 Codex <strong>Settings → MCP servers → Add server</strong>。</li><li>選 <strong>STDIO</strong>，填入 Codex 建議的啟動命令與必要參數。</li><li>儲存後重新啟動 Codex；用 <code>/mcp</code> 或 MCP servers 清單確認自己選擇的 MCP 已啟用。</li></ol>
 <blockquote><p>若啟動失敗，不要隨便改成可讀整台電腦或把環境變數貼進聊天。先請 Codex 解釋錯誤訊息、檢查目前專案資料夾與啟動命令。</p></blockquote>
 <h2>練習五：三類驗收測試</h2>
-<p>每人都至少跑以下三題，並記下 MCP 是否真的被呼叫、答案是否只來自資料檔。</p>
-<h3>課後延伸：設備借用 MCP</h3>
-<p>完成課堂訂單 MCP 後，再以 <a href="session-04-mcp-demo-data.html">虛構設備借用資料</a>重做一次；不涉及公司訂單資料。</p>
+<p><strong>課堂必做：</strong>用你剛連上的<strong>訂單查詢 MCP</strong>測試。三大類各至少選 <strong>1 題</strong>（合計至少 3 題）。記下：MCP 是否真的被呼叫、答案是否只來自資料檔、有沒有 Codex 自己猜的內容。</p>
+<blockquote><p><strong>三類是什麼？</strong><br/>
+<strong>A. 正常查詢</strong>：資料存在，工具應正確列出。<br/>
+<strong>B. 指定單據明細</strong>：依單據號碼查一筆明細。<br/>
+<strong>C. 查無或錯誤輸入</strong>：資料不存在或輸入不完整時，應明確說找不到／待確認，不可瞎猜。</p></blockquote>
+
+<h3>A. 正常查詢（至少選 1 題）</h3>
+<pre class="copy-prompt"><code>請依客戶與預交貨日期列出訂單；不同幣別請分開呈現，不可直接加總。</code></pre>
+<pre class="copy-prompt"><code>請列出近期預交貨的訂單，整理成表格：單據號碼、客戶、幣別、金額、預交貨日、待確認處。</code></pre>
+<pre class="copy-prompt"><code>請依客戶分組摘要訂單：每家客戶有幾張單、各幣別金額分別是多少；不可跨幣別直接加總。</code></pre>
+<pre class="copy-prompt"><code>請只列出幣別為 TWD 的訂單；若資料沒有幣別欄，請標示待確認。</code></pre>
+
+<h3>B. 指定單據明細（至少選 1 題）</h3>
+<pre class="copy-prompt"><code>請查詢單據號碼 SS1-2601001 的明細；資料沒有寫的內容請標示待確認。</code></pre>
+<pre class="copy-prompt"><code>請查詢單據號碼 SS1-2601001：品項、數量、單價、金額、預交貨日。沒有的欄位請標示待確認，不要自行補數字。</code></pre>
+<pre class="copy-prompt"><code>請用 get_sales_order_detail 查 SS1-2601001，並說明你呼叫了哪個工具、回傳了哪些欄位。</code></pre>
+
+<h3>C. 查無或錯誤輸入（至少選 1 題）</h3>
+<pre class="copy-prompt"><code>請查詢單據號碼 SS1-9999999 的明細。</code></pre>
+<pre class="copy-prompt"><code>請查詢單據號碼 ABC-NOT-EXIST 的明細；若找不到，請明確說明找不到，不要編造品項。</code></pre>
+<pre class="copy-prompt"><code>請查詢單據明細，但我不提供單據號碼。請說明還缺什麼輸入，不要猜測單號。</code></pre>
+<pre class="copy-prompt"><code>請列出客戶名稱為「不存在的測試客戶XYZ」的訂單；若沒有資料，請明確回覆查無資料。</code></pre>
+
+<pre class="worksheet"><code>【我選做的題目】
+A 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確定
+結果摘要：
+
+B 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確定
+結果摘要：
+
+C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確定
+結果摘要：
+
+有沒有任何回答是 Codex 自己猜的？
+
+要修改的工具說明或回傳格式：</code></pre>
+
+<h3>課後延伸：設備借用 MCP（選做，不占課堂完成門檻）</h3>
+<p>完成課堂訂單 MCP 後，可再以 <a href="session-04-mcp-demo-data.html">虛構設備借用資料</a>重做；不涉及公司訂單資料。同樣建議三大類各測一題。</p>
 <pre class="copy-prompt"><code>請在「穩得 AI 工作小工具」專案中、我指定的新資料夾建立一個本機 STDIO MCP 小成品。
 
 用途：查詢虛構的設備借用資料。
@@ -106,25 +142,10 @@ Codex 提出的檔案結構：
 2. get_equipment_status：依設備編號或名稱查詢借用狀態與預計歸還日。
 
 規則：找不到資料時明確回覆，不可自行猜測；先提出工具規格與測試案例，等我確認後才建立程式。</code></pre>
-<h3>設備題 A. 正常查詢</h3>
 <pre class="copy-prompt"><code>請列出目前仍在借用中的設備，整理成表格：設備、借用狀態、預計歸還日、待確認處。</code></pre>
-<h3>設備題 B. 查單一設備</h3>
 <pre class="copy-prompt"><code>請查詢設備 EQ-003 的借用狀態與預計歸還日。資料沒有寫的內容請標示待確認。</code></pre>
-<h3>設備題 C. 找不到或錯誤輸入</h3>
 <pre class="copy-prompt"><code>請查詢設備 EQ-999 的借用狀態。</code></pre>
-<h3>課堂訂單題：三類測試</h3>
-<pre class="copy-prompt"><code>請依客戶與預交貨日期列出訂單；不同幣別請分開呈現，不可直接加總。</code></pre>
-<pre class="copy-prompt"><code>請查詢單據號碼 SS1-2601001 的明細；資料沒有寫的內容請標示待確認。</code></pre>
-<pre class="copy-prompt"><code>請查詢單據號碼 SS1-9999999 的明細。</code></pre>
-<pre class="worksheet"><code>測試 A 結果：
-
-測試 B 結果：
-
-測試 C 結果：
-
-有沒有任何回答是 Codex 自己猜的？
-
-要修改的工具說明或回傳格式：</code></pre>
+<pre class="copy-prompt"><code>請查詢設備名稱含「投影」的借用狀態；若沒有相符資料，請明確說明。</code></pre>
 <h2>比較：何時直接用 Codex，何時值得做 MCP？</h2>
 <table><thead><tr><th>比較面向</th><th>直接讀 Excel（不連 MCP）</th><th>訂單查詢 MCP</th></tr></thead><tbody>
 <tr><td>開始速度</td><td>最快，提供檔案與任務即可。</td><td>需先定義工具、建立程式與設定 STDIO。</td></tr>
