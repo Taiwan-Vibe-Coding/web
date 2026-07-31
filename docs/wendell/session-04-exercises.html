@@ -4,7 +4,7 @@
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="Cache-Control" content="no-cache"/>
 <title>Day 4 練習題 · 第一個 STDIO MCP 小成品</title>
 <link rel="icon" href="favicon.ico?v=3" sizes="any"/><link rel="icon" href="favicon.svg?v=3" type="image/svg+xml"/><link rel="icon" href="favicon-32.png?v=3" type="image/png" sizes="32x32"/><link rel="apple-touch-icon" href="apple-touch-icon.png?v=3"/>
-<link rel="stylesheet" href="style.css?v=9"/>
+<link rel="stylesheet" href="style.css?v=10"/>
 </head>
 <body><div class="wrap">
 <nav class="top"><a class="brand-mark" href="index.html" title="Taiwan Vibe Coding"><img class="brand-logo" src="assets/logo.svg" width="28" height="28" alt="Taiwan Vibe Coding"/></a><a href="index.html">教材目錄</a><span class="sep">·</span><a href="session-04-lesson-plan.html">上一份</a><a href="session-04-mcp-demo-data.html">示範資料</a></nav>
@@ -201,14 +201,15 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 3. 廠商的付款條件與聯絡人。
 請用繁體中文表格呈現。只能整理系統資料；哪一筆要優先付款請標示「待人工決定」。</code></pre>
 
-<h4>模擬的 Codex 複合查詢回覆</h4>
-<pre class="copy-prompt"><code>付款追蹤摘要（模擬）
-
-| 廠商 | 發票／帳款 | 金額 | 到期日 | 採購品項 | 付款條件 | 聯絡人 | 待確認 |
-| 晨光校正服務 | AP-DEMO-001 | 48,000 元 | 8/2 | 年度校正服務 | 月結 30 天 | 林小姐 | 是否已實際付款 |
-| 遠景測試配件 | AP-DEMO-002 | 26,500 元 | 8/8 | 測試配件組 | 月結 45 天 | 張先生 | 到貨狀態 |
-
-提醒：到期日較近不等於可直接付款；是否付款、是否催貨均待人工決定。</code></pre>
+<div class="sample-result" id="mock-reply">
+  <div class="sample-result-label">模擬 Codex 回覆（供判讀，不必複製）</div>
+  <p><strong>付款追蹤摘要（模擬）</strong></p>
+  <table><thead><tr><th>廠商</th><th>發票／帳款</th><th>金額</th><th>到期日</th><th>採購品項</th><th>付款條件</th><th>聯絡人</th><th>待確認</th></tr></thead><tbody>
+  <tr><td>晨光校正服務</td><td>AP-DEMO-001</td><td>48,000 元</td><td>8/2</td><td>年度校正服務</td><td>月結 30 天</td><td>林小姐</td><td>是否已實際付款</td></tr>
+  <tr><td>遠景測試配件</td><td>AP-DEMO-002</td><td>26,500 元</td><td>8/8</td><td>測試配件組</td><td>月結 45 天</td><td>張先生</td><td>到貨狀態</td></tr>
+  </tbody></table>
+  <p class="sample-result-note">提醒：到期日較近不等於可直接付款；是否付款、是否催貨均<strong>待人工決定</strong>。</p>
+</div>
 
 <pre class="worksheet"><code>模擬回覆串接了哪些資料？
 
@@ -219,19 +220,23 @@ C 類選：　　　　　　　MCP 有被呼叫？□ 有　□ 沒有／不確
 <h3>三、安全寫入判讀：preview → confirm（15:25–15:45）</h3>
 <blockquote><p>本題只判讀下方<strong>模擬預覽</strong>，不建立、不確認送出任何資料。正式系統的寫入由授權人員依既有流程處理。</p></blockquote>
 
-<h4 id="preview">模擬新增客戶預覽</h4>
-<pre class="copy-prompt"><code>動作：新增客戶（僅模擬預覽，尚未送出）
-
-客戶名稱：WDL-E0XX_測試客戶
-國別：台灣
-聯絡人：未提供
-資料來源：課堂練習情境
-
-待確認：
-1. WDL-E0XX 是否為目前操作人的示範員工編號？
-2. 客戶名稱是否符合命名規則？
-3. 此筆是否確定只能建立在教學專用 demo，而非正式系統？</code></pre>
-<p><strong>判讀：</strong>只要任一待確認事項未釐清，就不應確認送出。一般學員本堂只練習指出問題，不執行寫入。</p>
+<div class="sample-result" id="preview">
+  <div class="sample-result-label">模擬新增客戶預覽（供判讀，尚未送出）</div>
+  <p><strong>動作：</strong>新增客戶（僅模擬預覽）</p>
+  <table><thead><tr><th>欄位</th><th>預覽內容</th></tr></thead><tbody>
+  <tr><td>客戶名稱</td><td>WDL-E0XX_測試客戶</td></tr>
+  <tr><td>國別</td><td>台灣</td></tr>
+  <tr><td>聯絡人</td><td>未提供</td></tr>
+  <tr><td>資料來源</td><td>課堂練習情境</td></tr>
+  </tbody></table>
+  <p><strong>待確認：</strong></p>
+  <ol>
+    <li>WDL-E0XX 是否為目前操作人的示範員工編號？</li>
+    <li>客戶名稱是否符合命名規則？</li>
+    <li>此筆是否確定只能建立在教學專用 demo，而非正式系統？</li>
+  </ol>
+  <p class="sample-result-note">判讀：只要任一待確認事項未釐清，就不應確認送出。一般學員本堂只練習指出問題，不執行寫入。</p>
+</div>
 
 <pre class="worksheet"><code>預覽中我核對了：名稱／國別／其他：
 

@@ -492,3 +492,39 @@ pre.diagram {
   color: var(--muted);
   font-size: 0.92rem;
 }
+
+/* Simulated Codex / system output — for reading, not copying into Codex */
+.sample-result {
+  margin: 1.1em 0;
+  padding: 14px 16px 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.sample-result-label {
+  display: inline-block;
+  margin: 0 0 0.75em;
+  padding: 0.15em 0.65em;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.sample-result table {
+  margin: 0.6em 0;
+}
+
+.sample-result-note {
+  margin: 0.75em 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.sample-result ol {
+  margin: 0.4em 0 0.6em 1.2em;
+}
